@@ -1,0 +1,30 @@
+.search__container {
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+}
+.search__text {
+  font-size: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding-bottom: 20px;
+}
+
+.search__form {
+  height: 30px;
+  width: 100%;
+  border: 2px solid grey;
+}
+
+.search__generic__field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 16%;
+}
+
+.search__button {
+  background-color: whitesmoke;
+  padding: 10px 24px;
+  border-radius: 12px;
+}

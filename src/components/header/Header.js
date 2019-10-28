@@ -7,7 +7,7 @@ export const Header = () => {
       <div className="header__generic">
         <div>
           <div className="header__content" id="name">
-            Contranet
+            Cyclik
           </div>
         </div>
         <div className="header__generic__first">
