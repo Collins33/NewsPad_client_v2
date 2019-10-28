@@ -1,0 +1,32 @@
+#name {
+  font-size: 20px;
+}
+.header__generic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.header__generic__first {
+  display: flex;
+  flex-direction: row;
+}
+.header__generic__second {
+  display: flex;
+  flex-direction: row;
+}
+.header__content {
+  margin: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+.header__button {
+  background-color: #e7e7e7;
+  padding: 10px 24px;
+  border-radius: 12px;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+}
