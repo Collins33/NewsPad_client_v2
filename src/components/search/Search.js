@@ -6,10 +6,10 @@ export const Search = () => {
     <>
       <div className="search__container">
         <div className="search__generic__field">
-          <div className="search__text">Search for a Bike</div>
+          <div className="search__text">Search for a News Article</div>
           <form>
             <input
-              placeholder="enter price or type of bike"
+              placeholder="enter headline or news source"
               className="search__form"
             />
             <button className="search__button">Search >>></button>
