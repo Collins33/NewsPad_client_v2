@@ -1,7 +1,8 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "../reducers/index";
-import rootSagas from "../sagas/index";
+import rootSaga from "../sagas/index";
+import axios from "axios";
 
 const sagaMiddleware = createSagaMiddleware();
 const tool = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -12,6 +13,6 @@ const store = createStore(rootReducer, middleware);
 const token = localStorage.getItem("jwt-token");
 axios.defaults.headers.common["Authorization"] = token;
 
-sagaMiddleware.run(rootSagas);
+sagaMiddleware.run(rootSaga);
 
 export default store;
