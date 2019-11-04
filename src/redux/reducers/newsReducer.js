@@ -10,7 +10,7 @@ export default function(state = initialState, action) {
     case types.GET_ALL_NEWS:
       return { ...state, isLoading: true };
     case types.GET_ALL_NEWS_SUCCESS:
-      return { ...state, news: action.news };
+      return { ...state, isLoading: false, news: action.news };
     case types.GET_ALL_NEWS_FAIL:
       return { ...state, error: true };
     default:

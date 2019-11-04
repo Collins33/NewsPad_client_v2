@@ -9,14 +9,14 @@ class News extends Component {
   }
 
   render() {
-    const { news } = this.props;
-    console.log(news, "<><><><><><><>");
-    return <div>NEWS</div>;
+    const { news, isLoading } = this.props;
+    return <div>{isLoading ? <h1>Loading ...</h1> : <h1>Data found</h1>}</div>;
   }
 }
 
 const mapStateToProps = ({ news }) => ({
-  news: news.news
+  news: news.news,
+  isLoading: news.isLoading
 });
 const actionCreators = {
   getNewsArticles

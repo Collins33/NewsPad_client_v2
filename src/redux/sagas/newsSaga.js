@@ -1,12 +1,14 @@
-import { takeLatest, call } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga/effects";
 import * as types from "../actionTypes/actionTypes";
 import NewsApi from "../api/newsApi";
+import { getNewsArticlesSuccess } from "../actions/newsAction";
 require("dotenv").config();
 
 function* fetchNewsSaga(action) {
   try {
     const news = yield call(NewsApi.getNewsArticles);
-    console.log(news);
+    const data = news.data.articles;
+    yield put(getNewsArticlesSuccess(data));
   } catch (error) {
     console.log(error);
   }
