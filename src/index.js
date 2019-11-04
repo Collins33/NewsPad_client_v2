@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./redux/store/configureStore";
+require("dotenv").config();
 
 ReactDOM.render(
   <Provider store={store}>

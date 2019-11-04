@@ -1,8 +1,12 @@
 import axios from "axios";
+require("dotenv").config();
 
 class NewsApi {
   static getNewsArticles() {
-    return axios.get("http://newspadv2.herokuapp.com/api/v1/news");
+    const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
+    return axios.get(
+      `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${newsApiKey}`
+    );
   }
 }
 

@@ -1,6 +1,7 @@
 import { takeLatest, call } from "redux-saga/effects";
 import * as types from "../actionTypes/actionTypes";
 import NewsApi from "../api/newsApi";
+require("dotenv").config();
 
 function* fetchNewsSaga(action) {
   try {
