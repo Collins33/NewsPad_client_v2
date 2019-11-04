@@ -6,7 +6,7 @@ export const getNewsArticles = () => {
   };
 };
 
-export const getNewsArticlesSuccess = () => {
+export const getNewsArticlesSuccess = news => {
   return {
     type: types.GET_ALL_NEWS_SUCCESS,
     news
