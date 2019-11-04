@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getNewsArticles } from "../../redux/actions/newsAction";
+import { NewsArticle } from "./newsArticles";
+import "./news.css";
 
 class News extends Component {
   componentDidMount() {
@@ -10,7 +12,11 @@ class News extends Component {
 
   render() {
     const { news, isLoading } = this.props;
-    return <div>{isLoading ? <h1>Loading ...</h1> : <h1>Data found</h1>}</div>;
+    return (
+      <div className="news_article_container">
+        {isLoading ? <h1>Loading ...</h1> : <NewsArticle news={news} />}
+      </div>
+    );
   }
 }
 
