@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getNewsArticles } from "../../redux/actions/newsAction";
 import { NewsArticle } from "./newsArticles";
+import { SelectBar } from "../selectBar/index";
 import "./news.css";
 
 class News extends Component {
@@ -17,7 +18,10 @@ class News extends Component {
         {isLoading ? (
           <h1 className="loading_text">Fetching news articles ...</h1>
         ) : (
-          <NewsArticle news={news} />
+          <div>
+            <SelectBar />
+            <NewsArticle news={news} />
+          </div>
         )}
       </div>
     );
