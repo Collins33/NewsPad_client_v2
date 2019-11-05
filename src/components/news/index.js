@@ -14,7 +14,11 @@ class News extends Component {
     const { news, isLoading } = this.props;
     return (
       <div>
-        {isLoading ? <h1>Loading ...</h1> : <NewsArticle news={news} />}
+        {isLoading ? (
+          <h1 className="loading_text">Fetching news articles ...</h1>
+        ) : (
+          <NewsArticle news={news} />
+        )}
       </div>
     );
   }

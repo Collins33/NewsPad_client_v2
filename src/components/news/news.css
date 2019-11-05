@@ -8,6 +8,12 @@
   width: 500px;
   height: 500px;
   margin: 50px;
+  background-color: var(--app-bg-color);
+  /* box-shadow: 0 1px 0px 1px rgba(0,0,0,0.1); */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .news_author {
@@ -18,7 +24,11 @@
   height: 300px;
 }
 .search__button {
-  background-color: blanchedalmond;
+  background-color: cyan;
   padding: 10px 24px;
   border-radius: 12px;
+  margin-top: 40px;
+}
+.loading_text {
+  margin-left: 200px;
 }
