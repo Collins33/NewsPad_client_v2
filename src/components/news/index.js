@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getNewsArticles } from "../../redux/actions/newsAction";
+import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
 import { NewsArticle } from "./newsArticles";
 import { SelectBar } from "../selectBar/index";
 import "./news.css";
@@ -33,7 +34,8 @@ const mapStateToProps = ({ news }) => ({
   isLoading: news.isLoading
 });
 const actionCreators = {
-  getNewsArticles
+  getNewsArticles,
+  searchNewsArticles
 };
 
 export default connect(

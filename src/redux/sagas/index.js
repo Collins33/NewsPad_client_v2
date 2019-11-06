@@ -1,6 +1,7 @@
-import { fork } from "redux-saga/effects";
+import { all } from "redux-saga/effects";
 import watchFetchNews from "./newsSaga";
+import watchSearchNews from "./searchNewsSaga";
 
 export default function* rootSaga() {
-  yield fork(watchFetchNews);
+  yield all([watchFetchNews(), watchSearchNews()]);
 }

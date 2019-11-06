@@ -13,6 +13,12 @@ export default function(state = initialState, action) {
       return { ...state, isLoading: false, news: action.news };
     case types.GET_ALL_NEWS_FAIL:
       return { ...state, error: true };
+    case types.SEARCH_NEWS_ARTICLES:
+      return { ...state, isLoading: true };
+    case types.SEARCH_NEWS_ARTICLES_SUCCESS:
+      return { ...state, isLoading: false, news: action.news };
+    case types.SEARCH_NEWS_ARTICLES_FAIL:
+      return { ...state, error: true };
     default:
       return state;
   }
