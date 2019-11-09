@@ -12,16 +12,38 @@ class News extends Component {
     getNewsArticles();
   }
 
+  /**
+   * Check if news
+   * articles exist
+   * return true
+   * if array has dataz
+   */
+  checkNewsArticles(news) {
+    const newsLength = news.length;
+    if (newsLength >= 1) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     const { news, isLoading } = this.props;
     return (
       <div>
         {isLoading ? (
-          <h1 className="loading_text">Fetching news articles ...</h1>
+          <h1 className="loading_text">Fetching News articles ...</h1>
         ) : (
           <div>
             <SelectBar />
-            <NewsArticle news={news} />
+            {this.checkNewsArticles(news) ? (
+              <div>
+                <NewsArticle news={news} />
+              </div>
+            ) : (
+              <div>
+                <h1 className="loading_text">No news matching your search</h1>
+              </div>
+            )}
           </div>
         )}
       </div>
