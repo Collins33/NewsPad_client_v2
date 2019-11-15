@@ -1,6 +1,10 @@
+.select_bar {
+  width: 100%;
+}
 .select_bar_container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .select__button {
   background-color: black;

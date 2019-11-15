@@ -3,7 +3,7 @@ import "./index.css";
 
 export const SelectBar = () => {
   return (
-    <div>
+    <div className="select_bar">
       <span className="popular_news_categories_text">
         POPULAR NEWS CATEGORIES
       </span>
