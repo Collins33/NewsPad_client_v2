@@ -12,8 +12,8 @@ export const Header = () => {
         </div>
         <div className="header__generic__first">
           <div className="header__content">Home</div>
-          <div className="header__content">All News</div>
-          <div className="header__content">Saved Articles</div>
+          <div className="header__content">AllNews</div>
+          <div className="header__content">Saved-Articles</div>
         </div>
         <div className="header__generic__second">
           <button className="header__content header__button">Sign Up</button>
