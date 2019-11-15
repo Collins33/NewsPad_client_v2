@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 import { getNewsArticles } from "../../redux/actions/newsAction";
 import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
 import { NewsArticle } from "./newsArticles";
@@ -65,11 +67,14 @@ class News extends Component {
     const indexOfTheLastNews = currentPage * newsPerPage;
     const indexOfFirstNews = indexOfTheLastNews - newsPerPage;
     const currentNews = news.slice(indexOfFirstNews, indexOfTheLastNews);
-
+    const width = "50%";
+    const height = "50%";
     return (
       <div>
         {isLoading ? (
-          <h1 className="loading_text">Fetching News articles ...</h1>
+          <div className="loader">
+            <Loader type="Puff" color="#00BFFF" height={height} width={width} />
+          </div>
         ) : (
           <div>
             <SelectBar handleSelectBarClick={this.handleSelectBarClick} />

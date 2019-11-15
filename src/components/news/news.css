@@ -40,8 +40,9 @@
   border-radius: 0.25rem;
   cursor: pointer;
 }
-.loading_text {
-  margin-left: 200px;
+.loader {
+  display: block;
+  margin-left: 40%;
 }
 .paginator_container {
   display: flex;
