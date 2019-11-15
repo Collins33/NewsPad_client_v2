@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { getNewsArticles } from "../../redux/actions/newsAction";
 import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
 import { NewsArticle } from "./newsArticles";
-import { SelectBar } from "../selectBar/index";
+import SelectBar from "../selectBar/index";
 import Paginator from "./paginator";
 import "./news.css";
 
@@ -41,6 +41,12 @@ class News extends Component {
     });
   };
 
+  handleSelectBarClick = event => {
+    const { searchNewsArticles } = this.props;
+    const selectBarValue = event.target.value;
+    searchNewsArticles(selectBarValue);
+  };
+
   addToArray = currentNews => {
     const { news } = this.props;
     if (news.length >= 1) {
@@ -66,7 +72,7 @@ class News extends Component {
           <h1 className="loading_text">Fetching News articles ...</h1>
         ) : (
           <div>
-            <SelectBar />
+            <SelectBar handleSelectBarClick={this.handleSelectBarClick} />
             {this.checkNewsArticles(news) ? (
               <div>
                 <NewsArticle news={currentNews} />

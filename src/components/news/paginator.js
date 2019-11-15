@@ -3,9 +3,7 @@ import React, { Component } from "react";
 class Paginator extends Component {
   computePaginator = (currentNews, news) => {
     const pageNumbers = [];
-
     const number = Math.ceil(news.length / currentNews.length);
-    console.log(number);
     for (let i = 1; i <= number; i++) {
       pageNumbers.push(i);
     }

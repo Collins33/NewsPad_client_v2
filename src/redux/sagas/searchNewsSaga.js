@@ -21,6 +21,5 @@ function* searchNewsSaga(action) {
  * Watcher saga
  */
 export default function* watchSearchNews() {
-  console.log("got here 2");
   yield takeLatest(types.SEARCH_NEWS_ARTICLES, searchNewsSaga);
 }
