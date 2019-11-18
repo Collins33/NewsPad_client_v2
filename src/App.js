@@ -6,7 +6,7 @@ require("dotenv").config();
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Header />
       <Search />
       <News />
