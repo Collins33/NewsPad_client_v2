@@ -21,7 +21,10 @@ class News extends Component {
       { value: "cars" },
       { value: "technology" },
       { value: "entertainment" },
-      { value: "education" }
+      { value: "education" },
+      { value: "health" },
+      { value: "science" },
+      { value: "general" }
     ]
   };
   componentDidMount() {

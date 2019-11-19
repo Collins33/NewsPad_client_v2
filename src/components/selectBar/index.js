@@ -13,9 +13,7 @@ export const SelectBar = ({ categories, handleSelectBarClick }) => {
   ));
   return (
     <div className="select_bar">
-      <span className="popular_news_categories_text">
-        POPULAR NEWS CATEGORIES
-      </span>
+      <span className="popular_news_categories_text">CLICK ON A CATEGORY</span>
       <div className="select_bar_container">{buttons}</div>
     </div>
   );
