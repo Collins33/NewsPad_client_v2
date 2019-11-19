@@ -2,12 +2,15 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 export const Header = () => {
+  const navStyle = {
+    color: "black"
+  };
   return (
     <>
       <div className="header__generic">
         <div>
           <div className="header__content" id="name">
-            <Link to="/">
+            <Link style={navStyle} to="/">
               {" "}
               <span>NewsPad</span>
             </Link>
@@ -15,10 +18,14 @@ export const Header = () => {
         </div>
         <div className="header__generic__first">
           <div className="header__content">
-            <Link to="/">Home</Link>
+            <Link style={navStyle} to="/">
+              Home
+            </Link>
           </div>
           <div className="header__content">
-            <Link to="/myarticles">MyArticles</Link>
+            <Link style={navStyle} to="/myarticles">
+              MyArticles
+            </Link>
           </div>
           <div className="header__content">Saved-Articles</div>
         </div>
