@@ -71,6 +71,14 @@ class News extends Component {
       return pageNumbers;
     }
   };
+  /**
+   * Check if the image is null
+   */
+  checkNewsImage = imageUrl => {
+    if (imageUrl == null) {
+      return true;
+    }
+  };
 
   render() {
     const { news, isLoading } = this.props;
@@ -95,7 +103,10 @@ class News extends Component {
             />
             {this.checkNewsArticles(news) ? (
               <div>
-                <NewsArticle news={currentNews} />
+                <NewsArticle
+                  news={currentNews}
+                  checkNewsImage={this.checkNewsImage}
+                />
                 <Paginator
                   currentNews={currentNews}
                   news={news}
