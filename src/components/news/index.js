@@ -5,7 +5,7 @@ import Loader from "react-loader-spinner";
 import { getNewsArticles } from "../../redux/actions/newsAction";
 import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
 import { NewsArticle } from "./newsArticles";
-import SelectBar from "../selectBar/index";
+import { SelectBar } from "../selectBar/index";
 import Paginator from "./paginator";
 import "./news.css";
 
@@ -13,7 +13,16 @@ class News extends Component {
   state = {
     currentPage: 1,
     newsPerPage: 4,
-    newsArticles: []
+    categories: [
+      { value: "business" },
+      { value: "bitcoin" },
+      { value: "politics" },
+      { value: "sports" },
+      { value: "cars" },
+      { value: "technology" },
+      { value: "entertainment" },
+      { value: "education" }
+    ]
   };
   componentDidMount() {
     const { getNewsArticles } = this.props;
@@ -62,7 +71,7 @@ class News extends Component {
 
   render() {
     const { news, isLoading } = this.props;
-    const { currentPage, newsPerPage } = this.state;
+    const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
     const indexOfFirstNews = indexOfTheLastNews - newsPerPage;
@@ -77,7 +86,10 @@ class News extends Component {
           </div>
         ) : (
           <div>
-            <SelectBar handleSelectBarClick={this.handleSelectBarClick} />
+            <SelectBar
+              handleSelectBarClick={this.handleSelectBarClick}
+              categories={categories}
+            />
             {this.checkNewsArticles(news) ? (
               <div>
                 <NewsArticle news={currentNews} />
