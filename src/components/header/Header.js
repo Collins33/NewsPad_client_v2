@@ -6,10 +6,10 @@ export const Header = () => {
     <>
       <div className="header__generic">
         <div>
-          <div className="header__content">
+          <div className="header__content" id="name">
             <Link to="/">
               {" "}
-              <span id="name">NewsPad</span>
+              <span>NewsPad</span>
             </Link>
           </div>
         </div>
