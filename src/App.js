@@ -1,17 +1,15 @@
 import React from "react";
-import { Header } from "./components/header/Header";
-import Search from "./components/search/Search";
-import News from "./components/news/index";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./views/Home/index";
+import { Route } from "react-router-dom";
 require("dotenv").config();
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Search />
-      <News />
-    </div>
+    <switch>
+      <div>
+        <Route path="/" component={Home} exact />
+      </div>
+    </switch>
   );
 }
 
