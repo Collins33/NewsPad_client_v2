@@ -1,3 +1,9 @@
+.error_page_container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-right: 20%;
+}
 .back_button {
   background-color: aquamarine;
   display: inline-block;
@@ -14,6 +20,6 @@
   line-height: 1.5;
   border-radius: 0.25rem;
   cursor: pointer;
-  margin-top: 50px;
-  margin-left: 30px;
+  margin-top: 10%;
+  margin-left: 3%;
 }
