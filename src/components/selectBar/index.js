@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./index.scss";
 
 export const SelectBar = ({ categories, handleSelectBarClick }) => {
   const buttons = categories.map((category, index) => (

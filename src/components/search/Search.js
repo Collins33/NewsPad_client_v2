@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
-import "./Search.css";
+import "./Search.scss";
 class Search extends Component {
   state = {
     searchQuery: ""

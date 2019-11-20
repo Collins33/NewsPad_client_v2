@@ -1,5 +1,5 @@
 import React from "react";
-import "./news.css";
+import "./news.scss";
 
 export const NewsArticle = ({ news, checkNewsImage }) => {
   const displayNews = news.map((story, index) => (

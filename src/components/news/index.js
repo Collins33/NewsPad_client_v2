@@ -7,7 +7,7 @@ import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
 import { NewsArticle } from "./newsArticles";
 import { SelectBar } from "../selectBar/index";
 import Paginator from "./paginator";
-import "./news.css";
+import "./news.scss";
 
 class News extends Component {
   state = {
