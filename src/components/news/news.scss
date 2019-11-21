@@ -1,9 +1,18 @@
 $flex-property: flex;
 $width: 100%;
 
-.news_article_container {
+@mixin flex_wrap() {
   display: $flex-property;
   flex-wrap: wrap;
+}
+
+@mixin flex_direction() {
+  display: $flex-property;
+  flex-direction: row;
+  justify-content: center;
+}
+.news_article_container {
+  @include flex_wrap();
   margin-right: 8%;
   margin-left: 8%;
 }
@@ -51,9 +60,7 @@ $width: 100%;
   margin-left: 40%;
 }
 .paginator_container {
-  display: $flex-property;
-  flex-direction: row;
-  justify-content: center;
+  @include flex_direction();
 }
 ul {
   list-style-type: none;
