@@ -1,10 +1,4 @@
-$flex_property: flex;
-$flex_direction: row;
-
-@mixin flexible() {
-  display: $flex_property;
-  flex-direction: $flex_direction;
-}
+@import "../../styles/index";
 #name {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;

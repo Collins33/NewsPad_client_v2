@@ -1,16 +1,4 @@
-$flex-property: flex;
-$width: 100%;
-
-@mixin flex_wrap() {
-  display: $flex-property;
-  flex-wrap: wrap;
-}
-
-@mixin flex_direction() {
-  display: $flex-property;
-  flex-direction: row;
-  justify-content: center;
-}
+@import "../../styles/index";
 .news_article_container {
   @include flex_wrap();
   margin-right: 8%;

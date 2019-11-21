@@ -1,5 +1,4 @@
-$flex_property: flex;
-$width: 100%;
+@import "../../styles/index";
 .search__container {
   display: $flex_property;
   flex-direction: row;
