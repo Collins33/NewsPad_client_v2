@@ -1,19 +1,22 @@
+$flex_property: flex;
+$flex_direction: row;
+
 #name {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;
 }
 .header__generic {
-  display: flex;
-  flex-direction: row;
+  display: $flex_property;
+  flex-direction: $flex_direction;
   justify-content: space-evenly;
 }
 .header__generic__first {
-  display: flex;
-  flex-direction: row;
+  display: $flex_property;
+  flex-direction: $flex_direction;
 }
 .header__generic__second {
-  display: flex;
-  flex-direction: row;
+  display: $flex_property;
+  flex-direction: $flex_direction;
 }
 .header__content {
   margin: 5%;

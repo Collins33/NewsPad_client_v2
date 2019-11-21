@@ -18,7 +18,7 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
         <h4 className="news_author">{story.source.name}</h4>
       </div>
       <div>
-        <h2>{story.title}</h2>
+        <h3 className="news_title">{story.title}</h3>
       </div>
       <button className="read__button">Read more >>></button>
     </div>

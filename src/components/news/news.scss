@@ -1,13 +1,16 @@
+$flex-property: flex;
+$width: 100%;
+
 .news_article_container {
-  display: flex;
+  display: $flex-property;
   flex-wrap: wrap;
   margin-right: 8%;
   margin-left: 8%;
 }
 .news-card {
-  width: 500px;
+  width: 40%;
   height: auto;
-  margin: 50px;
+  margin: 5%;
   background-color: var(--app-bg-color);
   /* box-shadow: 0 1px 0px 1px rgba(0,0,0,0.1); */
   border-radius: 5px;
@@ -18,10 +21,10 @@
 }
 
 .news_author {
-  width: 100%;
+  width: $width;
 }
 .news-image {
-  width: 100%;
+  width: $width;
   height: 50%;
 }
 .read__button {
@@ -48,7 +51,7 @@
   margin-left: 40%;
 }
 .paginator_container {
-  display: flex;
+  display: $flex-property;
   flex-direction: row;
   justify-content: center;
 }
@@ -72,4 +75,7 @@ ul {
   border-radius: 0.25rem;
   cursor: pointer;
   margin: 5px;
+}
+.news_title {
+  font-size: 2rem;
 }

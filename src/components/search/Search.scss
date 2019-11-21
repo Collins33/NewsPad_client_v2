@@ -1,5 +1,7 @@
+$flex_property: flex;
+$width: 100%;
 .search__container {
-  display: flex;
+  display: $flex_property;
   flex-direction: row;
   height: 350px;
 }
@@ -12,7 +14,7 @@
 
 .search__form {
   height: 30px;
-  width: 100%;
+  width: $width;
   border: 2px solid grey;
 }
 
