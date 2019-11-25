@@ -36,7 +36,7 @@ class News extends Component {
    * Check if news
    * articles exist
    * return true
-   * if array has dataz
+   * if array has data
    */
   checkNewsArticles(news) {
     const newsLength = news.length;
