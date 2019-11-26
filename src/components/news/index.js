@@ -40,10 +40,7 @@ class News extends Component {
    */
   checkNewsArticles(news) {
     const newsLength = news.length;
-    if (newsLength >= 1) {
-      return true;
-    }
-    return false;
+    return newsLength >= 1; // either evaluate to true or false
   }
 
   /**
@@ -75,9 +72,7 @@ class News extends Component {
    * Check if the image is null
    */
   checkNewsImage = imageUrl => {
-    if (imageUrl == null) {
-      return true;
-    }
+    return imageUrl == null;
   };
 
   render() {

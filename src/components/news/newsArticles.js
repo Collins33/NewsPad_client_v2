@@ -20,7 +20,7 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
       <div className="news_title_container">
         <h3 className="news_title">{story.title}</h3>
       </div>
-      <a href={story.url}>
+      <a target="_blank" href={story.url} rel="noopener noreferrer">
         <button className="read__button">Read more >>></button>
       </a>
     </div>
