@@ -52,6 +52,9 @@ class News extends Component {
     });
   };
 
+  /**
+   * handle click of select bar
+   */
   handleSelectBarClick = event => {
     const { searchNewsArticles } = this.props;
     const selectBarValue = event.target.value;
@@ -68,6 +71,7 @@ class News extends Component {
       return pageNumbers;
     }
   };
+
   /**
    * Check if the image is null
    */

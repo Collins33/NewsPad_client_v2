@@ -1,8 +1,6 @@
 @import "../../styles/index";
 .news_article_container {
   @include flex_wrap();
-  margin-right: 8%;
-  margin-left: 8%;
 }
 .news-card {
   width: 40%;
@@ -48,4 +46,7 @@ ul {
 }
 .news_title_container {
   margin-bottom: 5%;
+}
+.news_paginator_container {
+  height: auto;
 }

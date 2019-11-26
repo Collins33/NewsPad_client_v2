@@ -8,17 +8,16 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
         <img
           src="https://images.unsplash.com/photo-1559526324-c1f275fbfa32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
           className="news-image"
-          alt="images"
+          alt="news-images"
         />
       ) : (
         <img src={story.urlToImage} className="news-image" alt="images" />
       )}
-
       <div>
-        <h4 className="news_author">{story.source.name}</h4>
+        <p className="news_author">{story.source.name}</p>
       </div>
       <div className="news_title_container">
-        <h3 className="news_title">{story.title}</h3>
+        <p className="news_title">{story.title}</p>
       </div>
       <a target="_blank" href={story.url} rel="noopener noreferrer">
         <button className="read__button">Read more >>></button>
