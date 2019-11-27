@@ -6,11 +6,24 @@
   width: 100%;
   margin: 5%;
 }
+
+@media only screen and (max-width: 1000px) {
+  .search__container {
+    margin: 0;
+  }
+}
+
 .search__text {
   font-size: 50px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .search__text {
+    display: none;
+  }
 }
 
 .search__form {
@@ -24,6 +37,7 @@
     height: 50px;
     width: $width;
     border: 2px solid grey;
+    margin: 3%;
   }
 }
 .search__generic__field {
@@ -32,7 +46,20 @@
   justify-content: space-evenly;
   margin-left: 16%;
 }
+@media only screen and (max-width: 1000px) {
+  .search__generic__field {
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+}
 
 .search__button {
-  @include button_style_phone();
+  @include button_style();
+}
+
+@media only screen and (max-width: 1000px) {
+  .search__button {
+    display: none;
+  }
 }
