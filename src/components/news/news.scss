@@ -61,7 +61,7 @@ ul {
 @media only screen and (max-width: 1000px) {
   .paginator_key {
     @include button_style_phone();
-    margin: 5px;
+    margin: 25px;
   }
 }
 .news_title {

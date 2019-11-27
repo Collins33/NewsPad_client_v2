@@ -19,6 +19,13 @@
   border: 2px solid grey;
 }
 
+@media only screen and (max-width: 1000px) {
+  .search__form {
+    height: 50px;
+    width: $width;
+    border: 2px solid grey;
+  }
+}
 .search__generic__field {
   display: flex;
   flex-direction: column;
@@ -27,5 +34,5 @@
 }
 
 .search__button {
-  @include button_style();
+  @include button_style_phone();
 }
