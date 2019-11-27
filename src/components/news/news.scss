@@ -26,6 +26,7 @@
 @media only screen and (max-width: 1000px) {
   .news-card {
     width: 100%;
+    margin: 1%;
   }
 }
 
@@ -48,12 +49,20 @@
 .paginator_container {
   @include flex_direction();
 }
+
 ul {
   list-style-type: none;
 }
 .paginator_key {
   @include button_style();
   margin: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .paginator_key {
+    @include button_style_phone();
+    margin: 5px;
+  }
 }
 .news_title {
   font-size: 2rem;
