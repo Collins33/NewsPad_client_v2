@@ -1,6 +1,8 @@
 @import "../../styles/index";
 .news_article_container {
   @include flex_wrap();
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -8,6 +10,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-left: 2%;
+    margin-right: 4%;
   }
 }
 .news-card {
