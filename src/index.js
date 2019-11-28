@@ -5,6 +5,8 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from "./redux/store/configureStore";
 import { BrowserRouter } from "react-router-dom";
+import * as serviceWorker from "./serviceWorker";
+
 require("dotenv").config();
 
 ReactDOM.render(
@@ -15,3 +17,4 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+serviceWorker.register();
