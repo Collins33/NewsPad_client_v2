@@ -42,7 +42,7 @@
   height: 50%;
 }
 .read__button {
-  @include button_style();
+  @include read_button_style();
   position: absolute;
   bottom: 0;
 }
@@ -65,7 +65,7 @@ ul {
 @media only screen and (max-width: 1000px) {
   .paginator_key {
     @include button_style_phone();
-    margin: 25px;
+    margin: 10px;
   }
 }
 .news_title {

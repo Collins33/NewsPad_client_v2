@@ -18,7 +18,7 @@
   font-family: "Courier New", Courier, monospace;
 }
 .header__button {
-  @include button_style();
+  @include read_button_style();
 }
 hr {
   display: block;

@@ -36,6 +36,24 @@ $width: 100%;
   cursor: pointer;
 }
 
+@mixin read_button_style() {
+  background-color: black;
+  display: inline-block;
+  font: inherit;
+  color: whitesmoke;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
 @mixin button_style_phone() {
   background-color: black;
   display: inline-block;
@@ -48,7 +66,7 @@ $width: 100%;
   user-select: none;
   border: 1px solid transparent;
   padding: 0.625rem 1.25rem;
-  font-size: 2.3rem;
+  font-size: 0.7rem;
   line-height: 1.5;
   border-radius: 0.25rem;
   cursor: pointer;
