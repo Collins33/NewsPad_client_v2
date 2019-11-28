@@ -1,5 +1,5 @@
 var CACHE_NAME = "contranet";
-var urlsToCache = ["/", "/completed"];
+var urlsToCache = ["/"];
 
 // Install a service worker
 self.addEventListener("install", event => {
