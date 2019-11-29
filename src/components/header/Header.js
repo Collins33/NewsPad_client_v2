@@ -33,6 +33,14 @@ export const Header = () => {
           <button className="header__content header__button">Login</button>
         </div>
       </div>
+      <div className="header_phone_generic">
+        <div className="header__content" id="name">
+          <Link style={navStyle} to="/">
+            {" "}
+            <span>NewsPad</span>
+          </Link>
+        </div>
+      </div>
       <hr />
     </>
   );

@@ -7,6 +7,23 @@
   @include flexible();
   justify-content: space-evenly;
 }
+
+.header_phone_generic {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header_phone_generic {
+    @include flexible();
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .header__generic {
+    display: none;
+  }
+}
 .header__generic__first {
   @include flexible();
 }
@@ -26,6 +43,19 @@ hr {
   border: 0;
   border-top: 1px solid #ccc;
   padding: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    width: 100%;
+    margin-left: 10px;
+  }
 }
 a:link {
   text-decoration: none;
