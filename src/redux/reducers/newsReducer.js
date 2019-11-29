@@ -18,7 +18,7 @@ export default function(state = initialState, action) {
     case types.SEARCH_NEWS_ARTICLES_SUCCESS:
       return { ...state, isLoading: false, news: action.news };
     case types.SEARCH_NEWS_ARTICLES_FAIL:
-      return { ...state, error: true };
+      return { ...state, isLoading: false, error: true };
     default:
       return state;
   }

@@ -1,7 +1,10 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import * as types from "../actionTypes/actionTypes";
 import SearchNewsApi from "../api/searchNewsApi";
-import { searchNewsArticlesSuccess } from "../actions/searchNewsActions";
+import {
+  searchNewsArticlesSuccess,
+  searchNewsArticleFail
+} from "../actions/searchNewsActions";
 require("dotenv").config();
 
 function* searchNewsSaga(action) {
@@ -13,7 +16,7 @@ function* searchNewsSaga(action) {
     const data = searchResults.data.articles;
     yield put(searchNewsArticlesSuccess(data));
   } catch (error) {
-    console.log(error);
+    yield put(searchNewsArticleFail());
   }
 }
 
