@@ -19,9 +19,11 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
       <div className="news_title_container">
         <p className="news_title">{story.title}</p>
       </div>
-      <a target="_blank" href={story.url} rel="noopener noreferrer">
-        <button className="read__button">Read more >>></button>
-      </a>
+      <div className="button_div">
+        <a target="_blank" href={story.url} rel="noopener noreferrer">
+          <button className="read__button">Read more >>></button>
+        </a>
+      </div>
     </div>
   ));
   return <div className="news_article_container">{displayNews}</div>;
