@@ -101,17 +101,19 @@ class News extends Component {
               categories={categories}
             />
             {this.checkNewsArticles(news) ? (
-              <div>
-                <NewsArticle
-                  news={currentNews}
-                  checkNewsImage={this.checkNewsImage}
-                />
-                <Paginator
-                  currentNews={currentNews}
-                  news={news}
-                  handlePaginatorClick={this.handlePaginatorClick}
-                />
-              </div>
+              <>
+                <div>
+                  <NewsArticle
+                    news={currentNews}
+                    checkNewsImage={this.checkNewsImage}
+                  />
+                  <Paginator
+                    currentNews={currentNews}
+                    news={news}
+                    handlePaginatorClick={this.handlePaginatorClick}
+                  />
+                </div>
+              </>
             ) : (
               <div>
                 <h1 className="loading_text">No news matching your search</h1>

@@ -20,6 +20,17 @@
 }
 
 @media only screen and (max-width: 1000px) {
+  .header_phone_burger {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #ccc;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .header__generic {
     display: none;
   }
