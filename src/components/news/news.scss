@@ -47,6 +47,14 @@
   position: absolute;
   bottom: 0;
 }
+
+@media only screen and (max-width: 1000px) {
+  .read__button {
+    @include button_style_phone();
+    position: absolute;
+    bottom: 0;
+  }
+}
 .loader {
   display: block;
   margin-left: 40%;
