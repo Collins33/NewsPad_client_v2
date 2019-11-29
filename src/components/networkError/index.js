@@ -7,7 +7,7 @@ export const NetworkError = () => {
   }
   return (
     <div className="container_network_error">
-      Looks like you lost connection
+      <span className="connection_text">Looks like you lost connection</span>
       <button className="button_refresh" onClick={refreshPage}>
         Try again
       </button>
