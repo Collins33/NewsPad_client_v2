@@ -79,6 +79,14 @@ class News extends Component {
     return imageUrl == null;
   };
 
+  /**
+   * Check for network issue
+   */
+  checkNetworkIssue = () => {
+    const { error } = this.props;
+    return error;
+  };
+
   render() {
     const { news, isLoading } = this.props;
     const { currentPage, newsPerPage, categories } = this.state;
@@ -96,27 +104,37 @@ class News extends Component {
           </div>
         ) : (
           <div>
-            <SelectBar
-              handleSelectBarClick={this.handleSelectBarClick}
-              categories={categories}
-            />
-            {this.checkNewsArticles(news) ? (
-              <>
-                <div>
-                  <NewsArticle
-                    news={currentNews}
-                    checkNewsImage={this.checkNewsImage}
-                  />
-                  <Paginator
-                    currentNews={currentNews}
-                    news={news}
-                    handlePaginatorClick={this.handlePaginatorClick}
-                  />
-                </div>
-              </>
+            {this.checkNetworkIssue() ? (
+              <h1>There was a nework issue</h1>
             ) : (
               <div>
-                <h1 className="loading_text">No news matching your search</h1>
+                <SelectBar
+                  handleSelectBarClick={this.handleSelectBarClick}
+                  categories={categories}
+                />
+                <div>
+                  {this.checkNewsArticles(news) ? (
+                    <>
+                      <div>
+                        <NewsArticle
+                          news={currentNews}
+                          checkNewsImage={this.checkNewsImage}
+                        />
+                        <Paginator
+                          currentNews={currentNews}
+                          news={news}
+                          handlePaginatorClick={this.handlePaginatorClick}
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <div>
+                      <h1 className="loading_text">
+                        No news matching your search
+                      </h1>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>
@@ -128,7 +146,8 @@ class News extends Component {
 
 const mapStateToProps = ({ news }) => ({
   news: news.news,
-  isLoading: news.isLoading
+  isLoading: news.isLoading,
+  error: news.error
 });
 const actionCreators = {
   getNewsArticles,
