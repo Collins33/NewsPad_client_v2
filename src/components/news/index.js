@@ -6,6 +6,7 @@ import { getNewsArticles } from "../../redux/actions/newsAction";
 import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
 import { NewsArticle } from "./newsArticles";
 import { SelectBar } from "../selectBar/index";
+import { NetworkError } from "../networkError/index";
 import Paginator from "./paginator";
 import "./news.scss";
 
@@ -105,7 +106,7 @@ class News extends Component {
         ) : (
           <div>
             {this.checkNetworkIssue() ? (
-              <h1>There was a nework issue</h1>
+              <NetworkError />
             ) : (
               <div>
                 <SelectBar

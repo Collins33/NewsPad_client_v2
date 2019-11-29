@@ -1,0 +1,28 @@
+@import "../../styles/index";
+
+.container_network_error {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 10%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container_network_error {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 10%;
+  }
+}
+.button_refresh {
+  @include read_button_style();
+}
+
+@media only screen and (max-width: 1000px) {
+  .button_refresh {
+    @include button_style_phone();
+  }
+}
