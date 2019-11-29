@@ -25,6 +25,7 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   position: relative;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -86,6 +87,11 @@ ul {
 .news_paginator_container {
   height: auto;
 }
-.button_div {
-  padding-top: 10px;
+
+.news-card:link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
 }

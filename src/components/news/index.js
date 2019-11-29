@@ -116,17 +116,15 @@ class News extends Component {
                 <div>
                   {this.checkNewsArticles(news) ? (
                     <>
-                      <div>
-                        <NewsArticle
-                          news={currentNews}
-                          checkNewsImage={this.checkNewsImage}
-                        />
-                        <Paginator
-                          currentNews={currentNews}
-                          news={news}
-                          handlePaginatorClick={this.handlePaginatorClick}
-                        />
-                      </div>
+                      <NewsArticle
+                        news={currentNews}
+                        checkNewsImage={this.checkNewsImage}
+                      />
+                      <Paginator
+                        currentNews={currentNews}
+                        news={news}
+                        handlePaginatorClick={this.handlePaginatorClick}
+                      />
                     </>
                   ) : (
                     <div>
