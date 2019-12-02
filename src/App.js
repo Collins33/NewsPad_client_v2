@@ -4,9 +4,9 @@ require("dotenv").config();
 
 function App() {
   return (
-    <div>
+    <>
       <Routes />
-    </div>
+    </>
   );
 }
 
