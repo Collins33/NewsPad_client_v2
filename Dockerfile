@@ -1,17 +1,19 @@
 # Use an official node runtime as a parent image
 FROM node:8
 
-# make a directory
-RUN mkdir -p /my-app
+# create directory to hold the application code inside the image
+WORKDIR /usr/src/newspad
 
-# set working directory
-WORKDIR ./
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND
+# package-lock.json are copied where available (npm@5+)
+COPY package*.json ./
 
-COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install
 
-# install dependencies
-RUN npm ci
+# Bundle app source
+COPY . .
 
 EXPOSE 3000
 
-CMD npm start
+CMD ["npm", "start"]
