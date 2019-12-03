@@ -1,7 +1,11 @@
 # Use an official node runtime as a parent image
 FROM node:8
 
-WORKDIR /app
+# make a directory
+RUN mkdir -p /my-app
+
+# set working directory
+WORKDIR ./
 
 COPY ["package.json", "package-lock.json*", "./"]
 
