@@ -48,6 +48,7 @@ class News extends Component {
    * handle click of paginator
    */
   handlePaginatorClick = event => {
+    window.scrollTo(0, 0);
     this.setState({
       currentPage: Number(event.target.id)
     });
