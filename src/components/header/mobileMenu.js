@@ -17,6 +17,12 @@ const MobileMenu = () => {
           MyArticles
         </Link>
       </div>
+      <div className="mobile_menu_content">
+        <button className=" header__button">Sign Up</button>
+      </div>
+      <div className="mobile_menu_content">
+        <button className=" header__button">Login</button>
+      </div>
     </div>
   );
 };

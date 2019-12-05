@@ -8,6 +8,11 @@ class Header extends Component {
     visible: false
   };
 
+  renderMobileContent = () => {
+    this.setState(prevState => ({
+      visible: !prevState.visible
+    }));
+  };
   render() {
     const { visible } = this.state;
     const navStyle = {
@@ -49,7 +54,10 @@ class Header extends Component {
               <span>NewsPad</span>
             </Link>
           </div>
-          <div className="header__content hamburger">
+          <div
+            className="header__content hamburger"
+            onClick={this.renderMobileContent}
+          >
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
