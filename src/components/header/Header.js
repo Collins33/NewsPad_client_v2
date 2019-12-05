@@ -19,7 +19,7 @@ class Header extends Component {
       color: "black"
     };
     return (
-      <div>
+      <>
         <div className="header__generic">
           <div>
             <div className="header__content" id="name">
@@ -71,7 +71,7 @@ class Header extends Component {
           ""
         )}
         <hr />
-      </div>
+      </>
     );
   }
 }
