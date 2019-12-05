@@ -19,11 +19,12 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
         ) : (
           <img src={story.urlToImage} className="news-image" alt="images" />
         )}
-        <div>
+
+        <div className="content_container">
           <p className="news_author">{story.source.name}</p>
-        </div>
-        <div className="news_title_container">
-          <p className="news_title">{story.title}</p>
+          <div className="news_title_container">
+            <p className="news_title">{story.title}</p>
+          </div>
         </div>
       </div>
     </a>

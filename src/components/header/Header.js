@@ -70,7 +70,7 @@ class Header extends Component {
         ) : (
           ""
         )}
-        <hr />
+        <div className="header_bar"></div>
       </>
     );
   }
