@@ -41,6 +41,11 @@ export const Header = () => {
             <span>NewsPad</span>
           </Link>
         </div>
+        <div className="header__content hamburger">
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </div>
       <hr />
     </>
