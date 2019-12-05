@@ -83,3 +83,8 @@ a:link {
   transition: 0.4s;
   margin-left: 200px;
 }
+
+.container_mobile_menu {
+  display: flex;
+  flex-direction: column;
+}
