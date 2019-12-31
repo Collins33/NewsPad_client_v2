@@ -11,11 +11,20 @@ class SignUp extends Component {
   handlePasswordChange = event => {
     this.setState({ password: event.target.value });
   };
+
+  handleSubmit = event => {
+    const { email, password } = this.state;
+    event.preventDefault();
+    console.log({
+      email,
+      password
+    });
+  };
   render() {
     const { email, password } = this.state;
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             placeholder="enter your email"
             value={email}
