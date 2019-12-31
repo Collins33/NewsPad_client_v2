@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import MobileMenu from "./mobileMenu";
+import SignUp from "../forms/SignForm";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -80,15 +81,7 @@ class Header extends Component {
             >
               <h2 ref={subtitle => (this.subtitle = subtitle)}>Sign Up</h2>
               <button onClick={this.closeModal}>close</button>
-              <div>Enter credentials</div>
-              <form onSubmit={this.handleSubmit}>
-                <input
-                  placeholder="enter name"
-                  value=""
-                  onChange={this.handleChange}
-                  className="search__form"
-                />
-              </form>
+              <SignUp />
             </Modal>
           </div>
         </div>
