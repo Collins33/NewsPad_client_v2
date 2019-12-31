@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
+import { signUpUser } from "../../redux/actions/signUpUserAction";
 class SignUp extends Component {
   state = {
     email: "",
@@ -14,11 +15,14 @@ class SignUp extends Component {
 
   handleSubmit = event => {
     const { email, password } = this.state;
+    const { signUpUser } = this.props;
     event.preventDefault();
     console.log({
       email,
       password
     });
+    const data = { email, password };
+    signUpUser(data);
   };
   render() {
     const { email, password } = this.state;
@@ -44,4 +48,16 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = ({ news }) => ({
+  news: news.news,
+  isLoading: news.isLoading
+});
+
+const actionCreators = {
+  signUpUser
+};
+
+export default connect(
+  mapStateToProps,
+  actionCreators
+)(SignUp);
