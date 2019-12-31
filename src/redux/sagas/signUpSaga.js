@@ -7,8 +7,7 @@ require("dotenv").config();
 function* signUpUserSaga(action) {
   try {
     const userResults = yield call(SignUpApi.signUpUser, action.userData);
-    const responseMessage = userResults.message;
-    console.log(userResults.message, "<><><><><><><><><>");
+    const responseMessage = userResults.data.message;
     yield put(signUpUserSuccess(responseMessage));
   } catch (error) {
     yield put(signUpUserFail());

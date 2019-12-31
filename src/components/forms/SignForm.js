@@ -26,8 +26,10 @@ class SignUp extends Component {
   };
   render() {
     const { email, password } = this.state;
+    const { isLoading } = this.props;
     return (
       <div>
+        {isLoading ? <div>Loading.........</div> : <div>Process done</div>}
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder="enter your email"
