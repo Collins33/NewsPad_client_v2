@@ -13,7 +13,11 @@ export default function(state = initialState, action) {
     case types.SIGN_UP_USER_SUCCESS:
       return { ...state, isLoading: false, response: action.response };
     case types.SIGN_UP_USER_FAIL:
-      return { ...state, isLoading: false, response: action.response };
+      return {
+        ...state,
+        isLoading: false,
+        response: "The registration failed. Try again"
+      };
     default:
       return state;
   }

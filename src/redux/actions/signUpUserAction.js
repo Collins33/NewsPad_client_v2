@@ -14,9 +14,8 @@ export const signUpUserSuccess = response => {
   };
 };
 
-export const signUpUserFail = response => {
+export const signUpUserFail = () => {
   return {
-    type: types.SIGN_UP_USER_FAIL,
-    response
+    type: types.SIGN_UP_USER_FAIL
   };
 };

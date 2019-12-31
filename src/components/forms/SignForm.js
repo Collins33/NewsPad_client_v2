@@ -48,9 +48,10 @@ class SignUp extends Component {
   }
 }
 
-const mapStateToProps = ({ news }) => ({
-  news: news.news,
-  isLoading: news.isLoading
+const mapStateToProps = ({ userSignUp }) => ({
+  error: userSignUp.error,
+  isLoading: userSignUp.isLoading,
+  response: userSignUp.response
 });
 
 const actionCreators = {
