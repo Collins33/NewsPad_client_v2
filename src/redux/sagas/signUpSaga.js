@@ -10,7 +10,6 @@ require("dotenv").config();
 
 function* signUpUserSaga(action) {
   try {
-    console.log(action, "2");
     const userResults = yield call(SignUpApi.signUpUser, action.userData);
     console.log(userResults, "<><><><><><><><><>");
   } catch (error) {

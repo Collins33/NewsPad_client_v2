@@ -1,7 +1,6 @@
 import * as types from "../actionTypes/actionTypes";
 
 export const signUpUser = userData => {
-  console.log(userData, "1");
   return {
     type: types.SIGN_UP_USER,
     userData
