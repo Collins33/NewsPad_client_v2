@@ -2,12 +2,38 @@ import React, { Component } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import MobileMenu from "./mobileMenu";
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
+  }
+};
+
+Modal.setAppElement("#root");
 class Header extends Component {
   state = {
     clicked: false,
-    visible: false
+    visible: false,
+    modalIsOpen: false
   };
 
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  afterOpenModal = () => {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = "#f00";
+  };
+  closeModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
   renderMobileContent = () => {
     this.setState(prevState => ({
       visible: !prevState.visible
@@ -42,8 +68,28 @@ class Header extends Component {
             </div>
           </div>
           <div className="header__generic__second">
-            <button className="header__content header__button">Sign Up</button>
-            <button className="header__content header__button">Login</button>
+            <button className=" header__button" onClick={this.openModal}>
+              Get started
+            </button>
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              style={customStyles}
+              contentLabel="Example Modal"
+            >
+              <h2 ref={subtitle => (this.subtitle = subtitle)}>Sign Up</h2>
+              <button onClick={this.closeModal}>close</button>
+              <div>Enter credentials</div>
+              <form onSubmit={this.handleSubmit}>
+                <input
+                  placeholder="enter name"
+                  value=""
+                  onChange={this.handleChange}
+                  className="search__form"
+                />
+              </form>
+            </Modal>
           </div>
         </div>
         {/* mobile style */}
