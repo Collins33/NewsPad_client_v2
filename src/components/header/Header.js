@@ -23,7 +23,7 @@ class Header extends Component {
     clicked: false,
     visible: false,
     modalIsOpen: false,
-    signup: false
+    signup: "signup"
   };
 
   openModal = () => {
@@ -34,10 +34,11 @@ class Header extends Component {
     this.setState({ modalIsOpen: false });
   };
 
-  changeMode = () => {
-    this.setState(prevState => ({
-      signup: !prevState.signup
-    }));
+  changeMode = e => {
+    console.log(e.target.value);
+    this.setState({
+      signup: e.target.value
+    });
   };
 
   renderMobileContent = () => {
@@ -91,17 +92,19 @@ class Header extends Component {
                 <button
                   className="form_type_selector_button"
                   onClick={this.changeMode}
+                  value="signup"
                 >
                   Sign Up
                 </button>
                 <button
                   className="form_type_selector_button"
                   onClick={this.changeMode}
+                  value="login"
                 >
                   Log In
                 </button>
               </div>
-              {signup ? <SignUp /> : <Login />}
+              {signup === "signup" ? <SignUp /> : <Login />}
             </Modal>
           </div>
         </div>
