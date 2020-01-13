@@ -3,6 +3,7 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import MobileMenu from "./mobileMenu";
 import SignUp from "../forms/SignForm";
+import Login from "../forms/LoginForm";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -21,7 +22,8 @@ class Header extends Component {
   state = {
     clicked: false,
     visible: false,
-    modalIsOpen: false
+    modalIsOpen: false,
+    signup: false
   };
 
   openModal = () => {
@@ -31,13 +33,20 @@ class Header extends Component {
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
+
+  changeMode = () => {
+    this.setState(prevState => ({
+      signup: !prevState.signup
+    }));
+  };
+
   renderMobileContent = () => {
     this.setState(prevState => ({
       visible: !prevState.visible
     }));
   };
   render() {
-    const { visible } = this.state;
+    const { visible, signup } = this.state;
     const navStyle = {
       color: "black"
     };
@@ -79,10 +88,20 @@ class Header extends Component {
                 X
               </button>
               <div className="form_type_selector">
-                <button className="form_type_selector_button">Sign Up</button>
-                <button className="form_type_selector_button">Log In</button>
+                <button
+                  className="form_type_selector_button"
+                  onClick={this.changeMode}
+                >
+                  Sign Up
+                </button>
+                <button
+                  className="form_type_selector_button"
+                  onClick={this.changeMode}
+                >
+                  Log In
+                </button>
               </div>
-              <SignUp />
+              {signup ? <SignUp /> : <Login />}
             </Modal>
           </div>
         </div>

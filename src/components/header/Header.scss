@@ -108,6 +108,7 @@ a:link {
 .form_type_selector_button {
   @include read_button_style();
   margin: 5px;
+  width: 50%;
 }
 #modal_close {
   margin-left: 90%;
