@@ -8,6 +8,7 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
       href={story.url}
       rel="noopener noreferrer"
       className="news-card"
+      key={index}
     >
       <div key={index}>
         {checkNewsImage(story.urlToImage) ? (

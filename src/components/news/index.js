@@ -96,8 +96,8 @@ class News extends Component {
     const indexOfTheLastNews = currentPage * newsPerPage;
     const indexOfFirstNews = indexOfTheLastNews - newsPerPage;
     const currentNews = news.slice(indexOfFirstNews, indexOfTheLastNews);
-    const width = "50%";
-    const height = "50%";
+    const width = 500;
+    const height = 500;
     return (
       <div>
         {isLoading ? (

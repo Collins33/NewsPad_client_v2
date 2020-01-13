@@ -7,6 +7,7 @@ export const SelectBar = ({ categories, handleSelectBarClick }) => {
       className="select__button"
       value={category.value}
       onClick={handleSelectBarClick}
+      key={index}
     >
       {category.value.toUpperCase()}
     </button>
