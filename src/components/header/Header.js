@@ -28,10 +28,6 @@ class Header extends Component {
     this.setState({ modalIsOpen: true });
   };
 
-  afterOpenModal = () => {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#f00";
-  };
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
@@ -79,8 +75,13 @@ class Header extends Component {
               style={customStyles}
               contentLabel="Example Modal"
             >
-              <h2 ref={subtitle => (this.subtitle = subtitle)}>Sign Up</h2>
-              <button onClick={this.closeModal}>close</button>
+              <button onClick={this.closeModal} id="modal_close">
+                X
+              </button>
+              <div className="form_type_selector">
+                <button className="form_type_selector_button">Sign Up</button>
+                <button className="form_type_selector_button">Log In</button>
+              </div>
               <SignUp />
             </Modal>
           </div>
