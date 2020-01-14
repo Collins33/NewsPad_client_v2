@@ -41,6 +41,8 @@ class Login extends Component {
             value={password}
             onChange={this.handlePasswordChange}
             className="search__form"
+            type="password"
+            name="password"
           />
           <button className="search__button">Login</button>
         </form>
