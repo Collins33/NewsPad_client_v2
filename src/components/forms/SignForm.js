@@ -33,7 +33,11 @@ class SignUp extends Component {
           <div>
             {error
               ? response
-              : "Registration was successful. Log in to your account"}
+              : error === false
+              ? "Registration was successful. Log in to your account"
+              : error === ""
+              ? ""
+              : ""}
           </div>
         )}
         <form onSubmit={this.handleSubmit}>

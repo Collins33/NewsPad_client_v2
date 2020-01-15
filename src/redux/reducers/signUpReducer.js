@@ -2,8 +2,8 @@ import * as types from "../actionTypes/actionTypes";
 
 const initialState = {
   isLoading: false,
-  error: false,
-  response: ""
+  error: "",
+  response: "none"
 };
 
 export default function(state = initialState, action) {
@@ -11,7 +11,12 @@ export default function(state = initialState, action) {
     case types.SIGN_UP_USER:
       return { ...state, isLoading: true };
     case types.SIGN_UP_USER_SUCCESS:
-      return { ...state, isLoading: false, response: action.response };
+      return {
+        ...state,
+        isLoading: false,
+        error: false,
+        response: action.response
+      };
     case types.SIGN_UP_USER_FAIL:
       return {
         ...state,
