@@ -52,7 +52,10 @@ class Header extends Component {
             <span id="name">NewsPad</span>
           </Link>
           <div className="header__generic__second">
-            <button className=" header__button" onClick={this.openModal}>
+            <button
+              className="form_type_selector_button"
+              onClick={this.openModal}
+            >
               Get started
             </button>
             <Modal

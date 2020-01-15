@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUpUser } from "../../redux/actions/signUpUserAction";
+import "./SignUp.scss";
 class SignUp extends Component {
   state = {
     email: "",
@@ -40,13 +41,13 @@ class SignUp extends Component {
             placeholder="enter your email"
             value={email}
             onChange={this.handleEmailChange}
-            className="search__form"
+            className="registration_form "
           />
           <input
             placeholder="enter your password"
             value={password}
             onChange={this.handlePasswordChange}
-            className="search__form"
+            className="registration_form "
             type="password"
             name="password"
           />

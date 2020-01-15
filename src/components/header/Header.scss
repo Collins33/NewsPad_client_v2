@@ -23,8 +23,9 @@
   font-family: "Courier New", Courier, monospace;
   width: 50%;
 }
-.header__button {
+.form_type_selector_button {
   @include read_button_style();
+  margin-right: 10px;
 }
 hr {
   display: block;
