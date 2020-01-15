@@ -17,18 +17,24 @@ class SignUp extends Component {
     const { email, password } = this.state;
     const { signUpUser } = this.props;
     event.preventDefault();
-    console.log({
-      email,
-      password
-    });
     const data = { email, password };
     signUpUser(data);
   };
+
   render() {
     const { email, password } = this.state;
-    const { isLoading } = this.props;
+    const { isLoading, error, response } = this.props;
     return (
       <div>
+        {isLoading ? (
+          <h1>Loading....</h1>
+        ) : (
+          <div>
+            {error
+              ? response
+              : "Registration was successful. Log in to your account"}
+          </div>
+        )}
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder="enter your email"

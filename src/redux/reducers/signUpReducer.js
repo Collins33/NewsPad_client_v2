@@ -16,7 +16,8 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        response: "The registration failed. Try again"
+        response: "The registration failed. Try again",
+        error: true
       };
     default:
       return state;
