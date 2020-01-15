@@ -32,7 +32,9 @@ class Search extends Component {
                 onChange={this.handleChange}
                 className="search__form"
               />
-              <button className="search__button">Search >>></button>
+              <button className="search__button" disabled={!searchQuery}>
+                Search >>>
+              </button>
             </form>
           </div>
         </div>
