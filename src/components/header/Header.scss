@@ -9,43 +9,12 @@
   justify-content: space-evenly;
 }
 
-.header_phone_generic {
-  display: none;
-}
-
-@media only screen and (max-width: 1000px) {
-  .header_phone_generic {
-    @include flexible();
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .header_phone_burger {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 5px solid #ccc;
-    padding: 0;
-    width: 100%;
-  }
-}
-
-.header_bar {
-  width: 100%;
-  height: 2.5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
 @media only screen and (max-width: 1000px) {
   .header__generic {
     display: none;
   }
 }
-.header__generic__first {
-  @include flexible();
-}
+
 .header__generic__second {
   @include flexible();
 }
@@ -93,24 +62,11 @@ a:link {
   margin-left: 200px;
 }
 
-.container_mobile_menu {
-  display: flex;
-  flex-direction: column;
-}
-.mobile_menu_content {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
 .form_type_selector {
   display: flex;
   flex-direction: row;
 }
-.form_type_selector_button {
-  @include read_button_style();
-  margin: 5px;
-  width: 50%;
-}
+
 #modal_close {
   margin-left: 90%;
 }
@@ -135,7 +91,6 @@ a:link {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
   color: black;
 }
 
