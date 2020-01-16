@@ -53,13 +53,18 @@ class Header extends Component {
             <span className="header_text">NewsPad</span>
           </Link>
           <div className="header__generic__second">
-            <button
-              className="form_type_selector_button"
-              onClick={this.openModal}
-            >
-              Get started
-            </button>
-            <div className="header_text">{email}</div>
+            <div className="header_login_section">
+              {email ? (
+                <div className="header_text">Welcome {email}</div>
+              ) : (
+                <button
+                  className="form_type_selector_button"
+                  onClick={this.openModal}
+                >
+                  Get started
+                </button>
+              )}
+            </div>
             <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}

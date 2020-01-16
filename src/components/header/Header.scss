@@ -4,6 +4,10 @@
   font-size: 30px;
   color: #ddd;
 }
+
+.header_login_section {
+  margin-left: 750px;
+}
 .header__generic {
   @include flexible();
   justify-content: space-evenly;
