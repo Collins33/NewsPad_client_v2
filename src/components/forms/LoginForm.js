@@ -27,6 +27,7 @@ class Login extends Component {
     const { email } = this.props;
     localStorage.setItem("token", token);
     localStorage.setItem("email", email);
+    return <div>Login was successful</div>;
   };
   render() {
     const { email, password } = this.state;
