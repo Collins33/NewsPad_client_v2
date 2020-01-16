@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUpUser } from "../../redux/actions/signUpUserAction";
+import MainForm from "./MainForm";
+
 class Login extends Component {
   state = {
     email: "",
@@ -26,26 +28,17 @@ class Login extends Component {
   };
   render() {
     const { email, password } = this.state;
-    const { isLoading } = this.props;
+    // const { isLoading } = this.props;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="enter your email"
-            value={email}
-            onChange={this.handleEmailChange}
-            className="search__form"
-          />
-          <input
-            placeholder="enter your password"
-            value={password}
-            onChange={this.handlePasswordChange}
-            className="search__form"
-            type="password"
-            name="password"
-          />
-          <button className="search__button">Login</button>
-        </form>
+        <MainForm
+          handlePasswordChange={this.handlePasswordChange}
+          handleEmailChange={this.handleEmailChange}
+          password={password}
+          email={email}
+          handleSubmit={this.handleSubmit}
+          buttonText="Login"
+        />
       </div>
     );
   }

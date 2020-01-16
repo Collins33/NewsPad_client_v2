@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUpUser } from "../../redux/actions/signUpUserAction";
 import "./SignUp.scss";
+import MainForm from "./MainForm";
 class SignUp extends Component {
   state = {
     email: "",
@@ -40,23 +41,14 @@ class SignUp extends Component {
               : ""}
           </div>
         )}
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="enter your email"
-            value={email}
-            onChange={this.handleEmailChange}
-            className="registration_form "
-          />
-          <input
-            placeholder="enter your password"
-            value={password}
-            onChange={this.handlePasswordChange}
-            className="registration_form "
-            type="password"
-            name="password"
-          />
-          <button className="search__button">Sign Up</button>
-        </form>
+        <MainForm
+          handlePasswordChange={this.handlePasswordChange}
+          handleEmailChange={this.handleEmailChange}
+          password={password}
+          email={email}
+          handleSubmit={this.handleSubmit}
+          buttonText="Sign Up"
+        />
       </div>
     );
   }
