@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./SignUp.scss";
 class MainForm extends Component {
   render() {
     const {
@@ -17,13 +17,13 @@ class MainForm extends Component {
             placeholder="enter your email"
             value={email}
             onChange={handleEmailChange}
-            className="search__form"
+            className="registration_form"
           />
           <input
             placeholder="enter your password"
             value={password}
             onChange={handlePasswordChange}
-            className="search__form"
+            className="registration_form"
             type="password"
             name="password"
           />
