@@ -41,6 +41,7 @@ class Header extends Component {
   };
   render() {
     const { signup } = this.state;
+    const email = localStorage.getItem("email");
     const navStyle = {
       color: "black"
     };
@@ -49,7 +50,7 @@ class Header extends Component {
         <div className="topnav" id="myTopnav">
           <Link style={navStyle} to="/">
             {" "}
-            <span id="name">NewsPad</span>
+            <span className="header_text">NewsPad</span>
           </Link>
           <div className="header__generic__second">
             <button
@@ -58,6 +59,7 @@ class Header extends Component {
             >
               Get started
             </button>
+            <div className="header_text">{email}</div>
             <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}

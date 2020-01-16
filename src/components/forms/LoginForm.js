@@ -24,7 +24,9 @@ class Login extends Component {
   };
 
   saveToken = token => {
+    const { email } = this.props;
     localStorage.setItem("token", token);
+    localStorage.setItem("email", email);
   };
   render() {
     const { email, password } = this.state;
