@@ -24,9 +24,7 @@ class Login extends Component {
   };
 
   saveToken = token => {
-    const { closeModal } = this.props;
-    console.log(token, "><><><><>>><<");
-    closeModal();
+    localStorage.setItem("token", token);
   };
   render() {
     const { email, password } = this.state;

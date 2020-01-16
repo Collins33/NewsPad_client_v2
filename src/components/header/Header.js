@@ -46,7 +46,7 @@ class Header extends Component {
     };
     return (
       <>
-        <div class="topnav" id="myTopnav">
+        <div className="topnav" id="myTopnav">
           <Link style={navStyle} to="/">
             {" "}
             <span id="name">NewsPad</span>
