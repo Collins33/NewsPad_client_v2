@@ -84,7 +84,11 @@ class Header extends Component {
                   Log In
                 </button>
               </div>
-              {signup === "signup" ? <SignUp /> : <Login />}
+              {signup === "signup" ? (
+                <SignUp />
+              ) : (
+                <Login closeModal={this.closeModal} />
+              )}
             </Modal>
           </div>
         </div>

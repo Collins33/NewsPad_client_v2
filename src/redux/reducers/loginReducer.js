@@ -3,7 +3,9 @@ import * as types from "../actionTypes/actionTypes";
 const initialState = {
   isLoading: false,
   error: "",
-  response: "none"
+  message: "none",
+  token: "",
+  email: ""
 };
 
 export default function(state = initialState, action) {
@@ -15,13 +17,15 @@ export default function(state = initialState, action) {
         ...state,
         isLoading: false,
         error: false,
-        response: action.response
+        message: action.message,
+        token: action.token,
+        email: action.email
       };
     case types.LOGIN_USER_FAIL:
       return {
         ...state,
         isLoading: false,
-        response: "Authentication failed. Try again",
+        message: "Authentication failed. Try again",
         error: true
       };
     default:

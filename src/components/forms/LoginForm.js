@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { signUpUser } from "../../redux/actions/signUpUserAction";
+import { loginUser } from "../../redux/actions/loginUserActions";
 import MainForm from "./MainForm";
 
 class Login extends Component {
@@ -17,20 +17,35 @@ class Login extends Component {
 
   handleSubmit = event => {
     const { email, password } = this.state;
-    const { signUpUser } = this.props;
+    const { loginUser } = this.props;
     event.preventDefault();
-    console.log({
-      email,
-      password
-    });
     const data = { email, password };
-    signUpUser(data);
+    loginUser(data);
+  };
+
+  saveToken = token => {
+    const { closeModal } = this.props;
+    console.log(token, "><><><><>>><<");
+    closeModal();
   };
   render() {
     const { email, password } = this.state;
-    // const { isLoading } = this.props;
+    const { isLoading, error, message, token } = this.props;
     return (
       <div>
+        {isLoading ? (
+          <h1>Loading....</h1>
+        ) : (
+          <div>
+            {error
+              ? message
+              : error === false
+              ? this.saveToken(token)
+              : error === ""
+              ? ""
+              : ""}
+          </div>
+        )}
         <MainForm
           handlePasswordChange={this.handlePasswordChange}
           handleEmailChange={this.handleEmailChange}
@@ -44,14 +59,16 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ userSignUp }) => ({
-  error: userSignUp.error,
-  isLoading: userSignUp.isLoading,
-  response: userSignUp.response
+const mapStateToProps = ({ userLogin }) => ({
+  error: userLogin.error,
+  isLoading: userLogin.isLoading,
+  message: userLogin.message,
+  token: userLogin.token,
+  email: userLogin.email
 });
 
 const actionCreators = {
-  signUpUser
+  loginUser
 };
 
 export default connect(

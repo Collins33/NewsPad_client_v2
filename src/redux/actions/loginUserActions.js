@@ -7,10 +7,12 @@ export const loginUser = userData => {
   };
 };
 
-export const loginUserSuccess = response => {
+export const loginUserSuccess = (message, token, email) => {
   return {
     type: types.LOGIN_USER_SUCCESS,
-    response
+    message,
+    token,
+    email
   };
 };
 

@@ -1,16 +1,17 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import * as types from "../actionTypes/actionTypes";
 import LoginApi from "../api/loginApi";
-import { signUpUserSuccess, signUpUserFail } from "../actions/signUpUserAction";
+import { loginUserSuccess, loginUserFail } from "../actions/loginUserActions";
 require("dotenv").config();
 
 function* loginUserSaga(action) {
   try {
     const userResults = yield call(LoginApi.loginUser, action.userData);
-    const responseMessage = userResults.data.message;
-    yield put(signUpUserSuccess(responseMessage));
+    const responseMessage = userResults.data;
+    const { message, token, email } = responseMessage;
+    yield put(loginUserSuccess(message, token, email));
   } catch (error) {
-    yield put(signUpUserFail());
+    yield put(loginUserFail());
   }
 }
 
