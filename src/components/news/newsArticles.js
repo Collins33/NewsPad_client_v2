@@ -11,7 +11,7 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
       className="news-card"
       key={index}
     >
-      <div key={index}>
+      <div key={index} className="card_parent">
         {checkNewsImage(story.urlToImage) ? (
           <img
             src="https://images.unsplash.com/photo-1559526324-c1f275fbfa32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
