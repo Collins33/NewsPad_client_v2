@@ -2,7 +2,12 @@ import React from "react";
 import "./news.scss";
 import review from "../../images/review.png";
 
-export const NewsArticle = ({ news, checkNewsImage }) => {
+export const NewsArticle = ({
+  news,
+  checkNewsImage,
+  email,
+  getSingleNewsArticle
+}) => {
   const displayNews = news.map((story, index) => (
     <a
       target="_blank"
@@ -28,9 +33,18 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
             <p className="news_title">{story.title}</p>
           </div>
         </div>
-        <div>
-          <img src={review} alt="like-icon" className="like_icon" />
-        </div>
+        {email ? (
+          <div>
+            <img
+              src={review}
+              alt="like-icon"
+              className="like_icon"
+              onClick={getSingleNewsArticle(story)}
+            />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </a>
   ));

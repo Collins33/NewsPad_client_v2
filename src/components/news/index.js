@@ -81,6 +81,10 @@ class News extends Component {
     return imageUrl == null;
   };
 
+  getSingleNewsArticle = newsArticle => {
+    console.log(newsArticle);
+  };
+
   /**
    * Check for network issue
    */
@@ -98,6 +102,7 @@ class News extends Component {
     const currentNews = news.slice(indexOfFirstNews, indexOfTheLastNews);
     const width = 500;
     const height = 500;
+    const email = localStorage.getItem("email");
     return (
       <div>
         {isLoading ? (
@@ -120,6 +125,8 @@ class News extends Component {
                       <NewsArticle
                         news={currentNews}
                         checkNewsImage={this.checkNewsImage}
+                        email={email}
+                        getSingleNewsArticle={this.getSingleNewsArticle}
                       />
                       <Paginator
                         currentNews={currentNews}
