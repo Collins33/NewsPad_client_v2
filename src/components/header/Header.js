@@ -34,7 +34,6 @@ class Header extends Component {
   };
 
   changeMode = e => {
-    console.log(e.target.value);
     this.setState({
       signup: e.target.value
     });

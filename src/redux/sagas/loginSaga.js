@@ -9,6 +9,8 @@ function* loginUserSaga(action) {
     const userResults = yield call(LoginApi.loginUser, action.userData);
     const responseMessage = userResults.data;
     const { message, token, email } = responseMessage;
+    localStorage.setItem("token", token);
+    localStorage.setItem("email", email);
     yield put(loginUserSuccess(message, token, email));
   } catch (error) {
     yield put(loginUserFail());

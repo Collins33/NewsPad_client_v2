@@ -22,29 +22,24 @@ class Login extends Component {
     const data = { email, password };
     loginUser(data);
   };
-
-  saveToken = token => {
-    const { email } = this.props;
-    localStorage.setItem("token", token);
-    localStorage.setItem("email", email);
-    return <div>Login was successful</div>;
-  };
   render() {
     const { email, password } = this.state;
-    const { isLoading, error, message, token } = this.props;
+    const { isLoading, error, message } = this.props;
     return (
       <div>
         {isLoading ? (
           <h1>Loading....</h1>
         ) : (
           <div>
-            {error
-              ? message
-              : error === false
-              ? this.saveToken(token)
-              : error === ""
-              ? ""
-              : ""}
+            {error ? (
+              message
+            ) : error === false ? (
+              <div>Login was successful!!!!</div>
+            ) : error === "" ? (
+              ""
+            ) : (
+              ""
+            )}
           </div>
         )}
         <MainForm
