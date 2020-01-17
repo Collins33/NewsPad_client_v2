@@ -1,5 +1,6 @@
 import React from "react";
 import "./news.scss";
+import review from "../../images/review.png";
 
 export const NewsArticle = ({ news, checkNewsImage }) => {
   const displayNews = news.map((story, index) => (
@@ -26,6 +27,9 @@ export const NewsArticle = ({ news, checkNewsImage }) => {
           <div className="news_title_container">
             <p className="news_title">{story.title}</p>
           </div>
+        </div>
+        <div>
+          <img src={review} alt="like-icon" className="like_icon" />
         </div>
       </div>
     </a>
