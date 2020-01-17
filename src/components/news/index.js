@@ -82,7 +82,7 @@ class News extends Component {
   };
 
   getSingleNewsArticle = newsArticle => {
-    console.log(newsArticle);
+    console.log("no");
   };
 
   /**
