@@ -82,7 +82,7 @@ class News extends Component {
   };
 
   getSingleNewsArticle = newsArticle => {
-    console.log("no");
+    console.log(newsArticle);
   };
 
   /**
@@ -95,7 +95,6 @@ class News extends Component {
 
   render() {
     const { news, isLoading } = this.props;
-    console.log(news);
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;

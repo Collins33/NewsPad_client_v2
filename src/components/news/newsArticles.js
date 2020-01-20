@@ -9,8 +9,8 @@ export const NewsArticle = ({
   getSingleNewsArticle
 }) => {
   const displayNews = news.map((story, index) => (
-    <div className="news-card">
-      <a target="_blank" href={story.url} rel="noopener noreferrer" key={index}>
+    <div className="news-card" key={index}>
+      <a target="_blank" href={story.url} rel="noopener noreferrer">
         <div key={index} className="card_parent">
           {checkNewsImage(story.urlToImage) ? (
             <img
@@ -30,15 +30,10 @@ export const NewsArticle = ({
           </div>
         </div>
       </a>
-      <div>
+      <div onClick={() => getSingleNewsArticle(story)}>
         {email ? (
           <div>
-            <img
-              src={review}
-              alt="like-icon"
-              className="like_icon"
-              onClick={getSingleNewsArticle(story)}
-            />
+            <img src={review} alt="like-icon" className="like_icon" />
           </div>
         ) : (
           ""
