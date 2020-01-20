@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News renders without crashing given the right props 1`] = `
+<div>
+  <div>
+    <div>
+      <SelectBar
+        categories={
+          Array [
+            Object {
+              "value": "business",
+            },
+            Object {
+              "value": "bitcoin",
+            },
+            Object {
+              "value": "politics",
+            },
+            Object {
+              "value": "sports",
+            },
+            Object {
+              "value": "cars",
+            },
+            Object {
+              "value": "technology",
+            },
+            Object {
+              "value": "entertainment",
+            },
+            Object {
+              "value": "education",
+            },
+            Object {
+              "value": "health",
+            },
+            Object {
+              "value": "science",
+            },
+            Object {
+              "value": "general",
+            },
+          ]
+        }
+        handleSelectBarClick={[Function]}
+      />
+      <div>
+        <NewsArticle
+          checkNewsImage={[Function]}
+          email={null}
+          getSingleNewsArticle={[Function]}
+          news={
+            Array [
+              Object {},
+            ]
+          }
+        />
+        <Paginator
+          currentNews={
+            Array [
+              Object {},
+            ]
+          }
+          handlePaginatorClick={[Function]}
+          news={
+            Array [
+              Object {},
+            ]
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

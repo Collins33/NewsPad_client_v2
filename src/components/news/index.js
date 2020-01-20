@@ -95,6 +95,7 @@ class News extends Component {
 
   render() {
     const { news, isLoading } = this.props;
+    console.log(news);
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
@@ -165,3 +166,6 @@ export default connect(
   mapStateToProps,
   actionCreators
 )(News);
+
+// allow us to test the render of the component
+export { News };
