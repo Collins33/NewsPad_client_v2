@@ -45,60 +45,56 @@ class Header extends Component {
       color: "black"
     };
     return (
-      <>
-        <div className="topnav" id="myTopnav">
-          <Link style={navStyle} to="/">
-            {" "}
-            <span className="header_text">NewsPad</span>
-          </Link>
-          <div className="header__generic__second">
-            <div className="header_login_section">
-              {email ? (
-                <div className="header_text">Welcome {email}</div>
-              ) : (
-                <button
-                  className="form_type_selector_button"
-                  onClick={this.openModal}
-                >
-                  Get started
-                </button>
-              )}
-            </div>
-            <Modal
-              isOpen={this.state.modalIsOpen}
-              onAfterOpen={this.afterOpenModal}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="Example Modal"
+      <div className="topnav">
+        <Link style={navStyle} to="/">
+          {" "}
+          <span className="header_text">NewsPad</span>
+        </Link>
+        <div className="header_welcome">
+          {email ? (
+            <div>Welcome {email}</div>
+          ) : (
+            <button
+              className="form_type_selector_button"
+              onClick={this.openModal}
             >
-              <button onClick={this.closeModal} id="modal_close">
-                X
-              </button>
-              <div className="form_type_selector">
-                <button
-                  className="form_type_selector_button"
-                  onClick={this.changeMode}
-                  value="signup"
-                >
-                  Sign Up
-                </button>
-                <button
-                  className="form_type_selector_button"
-                  onClick={this.changeMode}
-                  value="login"
-                >
-                  Log In
-                </button>
-              </div>
-              {signup === "signup" ? (
-                <SignUp />
-              ) : (
-                <Login closeModal={this.closeModal} />
-              )}
-            </Modal>
-          </div>
+              Get started
+            </button>
+          )}
         </div>
-      </>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <button onClick={this.closeModal} id="modal_close">
+            X
+          </button>
+          <div className="form_type_selector">
+            <button
+              className="form_type_selector_button"
+              onClick={this.changeMode}
+              value="signup"
+            >
+              Sign Up
+            </button>
+            <button
+              className="form_type_selector_button"
+              onClick={this.changeMode}
+              value="login"
+            >
+              Log In
+            </button>
+          </div>
+          {signup === "signup" ? (
+            <SignUp />
+          ) : (
+            <Login closeModal={this.closeModal} />
+          )}
+        </Modal>
+      </div>
     );
   }
 }

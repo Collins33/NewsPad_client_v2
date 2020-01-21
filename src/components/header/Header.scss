@@ -5,23 +5,37 @@
   color: #ddd;
 }
 
-.header_login_section {
+.header_welcome {
   margin-left: 750px;
+}
+
+@media only screen and (max-width: 900px) {
+  .header_text {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: black;
+  }
+  .header_welcome {
+    margin-left: 50%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: black;
+  }
+  .topnav {
+    background-color: white;
+  }
 }
 .header__generic {
   @include flexible();
   justify-content: space-evenly;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
   .header__generic {
     display: none;
   }
 }
 
-.header__generic__second {
-  @include flexible();
-}
 .header__content {
   margin: 5%;
   font-family: "Courier New", Courier, monospace;
@@ -80,9 +94,13 @@ a:link {
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
-  overflow: hidden;
 }
 
+@media only screen and (max-width: 1000px) {
+  .topnav {
+    background-color: #fff;
+  }
+}
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
