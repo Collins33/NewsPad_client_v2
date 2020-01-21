@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+button {
+  min-height: 48px;
+  min-width: 48px;
+}
