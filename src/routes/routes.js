@@ -7,7 +7,7 @@ import { Route, Switch } from "react-router-dom";
 
 const Routes = () => (
   <>
-    <Header />
+    {/* <Header /> */}
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/myarticles" component={MyArticles} exact />
