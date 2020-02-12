@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Header.scss";
+import Search from "../search/Search";
 import { Link } from "react-router-dom";
 import SignUp from "../forms/SignForm";
 import Login from "../forms/LoginForm";
@@ -58,6 +59,9 @@ class Header extends Component {
               {" "}
               <span className="navbar_item">About Us</span>
             </Link>
+          </li>
+          <li>
+            <Search />
           </li>
           <li className="navbar_item">
             {email ? (

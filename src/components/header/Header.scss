@@ -23,6 +23,9 @@
   .navbar_container > li {
     flex-basis: 50%;
   }
+  .navbar.fixed-top {
+    margin-bottom: 50px;
+  }
 }
 .navbar_item {
   color: white;

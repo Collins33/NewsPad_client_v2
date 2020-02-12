@@ -24,7 +24,7 @@ class Search extends Component {
       <>
         <div className="search__container">
           <div className="search__generic__field">
-            <div className="search__text">Search for a News Article</div>
+            {/* <div className="search__text">Search for a News Article</div> */}
             <form onSubmit={this.handleSubmit}>
               <input
                 placeholder="enter headline or news category"
@@ -32,9 +32,9 @@ class Search extends Component {
                 onChange={this.handleChange}
                 className="search__form"
               />
-              <button className="search__button" disabled={!searchQuery}>
+              {/* <button className="search__button" disabled={!searchQuery}>
                 Search >>>
-              </button>
+              </button> */}
             </form>
           </div>
         </div>

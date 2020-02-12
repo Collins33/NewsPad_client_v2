@@ -1,17 +1,4 @@
 @import "../../styles/index";
-.search__container {
-  display: $flex_property;
-  flex-direction: row;
-  height: auto;
-  width: 100%;
-  margin: 5%;
-}
-
-@media only screen and (max-width: 1000px) {
-  .search__container {
-    margin: 0;
-  }
-}
 
 .search__text {
   font-size: 50px;
@@ -27,8 +14,9 @@
 }
 
 .search__form {
+  margin-top: 5%;
   height: 30px;
-  width: $width;
+  width: 90%;
   border: 2px solid grey;
 }
 
@@ -45,7 +33,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-left: 20%;
 }
 @media only screen and (max-width: 1000px) {
   .search__generic__field {
