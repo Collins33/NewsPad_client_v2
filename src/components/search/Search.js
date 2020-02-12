@@ -26,7 +26,7 @@ class Search extends Component {
           <div className="search__generic__field">
             <form onSubmit={this.handleSubmit}>
               <input
-                placeholder="enter headline or news category"
+                placeholder="search headline or news category"
                 value={searchQuery}
                 onChange={this.handleChange}
                 className="search__form"
