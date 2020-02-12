@@ -19,6 +19,7 @@
 @media all and (max-width: 600px) {
   .navbar_container {
     flex-wrap: wrap;
+    padding: 1rem;
   }
   .navbar_container > li {
     flex-basis: 50%;
