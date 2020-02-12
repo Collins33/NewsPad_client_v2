@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import "./SignUp.scss";
 class MainForm extends Component {
+  state = {
+    show: false
+  };
+
+  showPassword = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }));
+  };
   render() {
     const {
       handlePasswordChange,
@@ -10,6 +19,7 @@ class MainForm extends Component {
       handleSubmit,
       buttonText
     } = this.props;
+    const { show } = this.state;
     return (
       <div>
         <form onSubmit={handleSubmit}>
@@ -24,11 +34,14 @@ class MainForm extends Component {
             value={password}
             onChange={handlePasswordChange}
             className="registration_form"
-            type="password"
+            type={show ? "text" : "password"}
             name="password"
           />
           <button className="search__button" type="submit">
             {buttonText}
+          </button>
+          <button onClick={this.showPassword} type="button">
+            Show
           </button>
         </form>
       </div>
