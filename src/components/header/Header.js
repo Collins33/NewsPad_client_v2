@@ -46,7 +46,7 @@ class Header extends Component {
       color: "black"
     };
     return (
-      <nav class="navbar fixed-top">
+      <nav className="navbar fixed-top">
         <ul className="navbar_container">
           <li>
             <Link style={navStyle} to="/">
