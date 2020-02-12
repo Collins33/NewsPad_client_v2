@@ -83,14 +83,14 @@ class Header extends Component {
             </button>
             <div className="form_type_selector">
               <button
-                className="form_type_selector_button"
+                className="modal_button"
                 onClick={this.changeMode}
                 value="signup"
               >
                 Sign Up
               </button>
               <button
-                className="form_type_selector_button"
+                className="modal_button"
                 onClick={this.changeMode}
                 value="login"
               >

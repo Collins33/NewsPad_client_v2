@@ -34,3 +34,10 @@
   background-color: aliceblue;
   color: black;
 }
+
+.modal_button {
+  @include button_style();
+  background-color: black;
+  color: white;
+  margin: 1rem 2.5rem 2.5rem 0rem;
+}
