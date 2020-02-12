@@ -45,56 +45,66 @@ class Header extends Component {
       color: "black"
     };
     return (
-      <div className="topnav">
-        <Link style={navStyle} to="/">
-          {" "}
-          <span className="header_text">NewsPad</span>
-        </Link>
-        <div className="header_welcome">
-          {email ? (
-            <div>Welcome {email}</div>
-          ) : (
-            <button
-              className="form_type_selector_button"
-              onClick={this.openModal}
-            >
-              Get started
+      <nav class="navbar fixed-top">
+        <ul className="navbar_container">
+          <li>
+            <Link style={navStyle} to="/">
+              {" "}
+              <span className="navbar_item">NewsPad</span>
+            </Link>
+          </li>
+          <li>
+            <Link style={navStyle} to="/">
+              {" "}
+              <span className="navbar_item">About Us</span>
+            </Link>
+          </li>
+          <li className="navbar_item">
+            {email ? (
+              <div>Welcome {email}</div>
+            ) : (
+              <button
+                className="form_type_selector_button"
+                onClick={this.openModal}
+              >
+                Get started
+              </button>
+            )}
+          </li>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <button onClick={this.closeModal} id="modal_close">
+              X
             </button>
-          )}
-        </div>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <button onClick={this.closeModal} id="modal_close">
-            X
-          </button>
-          <div className="form_type_selector">
-            <button
-              className="form_type_selector_button"
-              onClick={this.changeMode}
-              value="signup"
-            >
-              Sign Up
-            </button>
-            <button
-              className="form_type_selector_button"
-              onClick={this.changeMode}
-              value="login"
-            >
-              Log In
-            </button>
-          </div>
-          {signup === "signup" ? (
-            <SignUp />
-          ) : (
-            <Login closeModal={this.closeModal} />
-          )}
-        </Modal>
-      </div>
+            <div className="form_type_selector">
+              <button
+                className="form_type_selector_button"
+                onClick={this.changeMode}
+                value="signup"
+              >
+                Sign Up
+              </button>
+              <button
+                className="form_type_selector_button"
+                onClick={this.changeMode}
+                value="login"
+              >
+                Log In
+              </button>
+            </div>
+            {signup === "signup" ? (
+              <SignUp />
+            ) : (
+              <Login closeModal={this.closeModal} />
+            )}
+          </Modal>
+        </ul>
+      </nav>
     );
   }
 }
