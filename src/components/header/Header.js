@@ -80,7 +80,7 @@ class Header extends Component {
                 className="form_type_selector_button"
                 onClick={this.openModal}
               >
-                Get started
+                Login/Signup
               </button>
             )}
           </li>
