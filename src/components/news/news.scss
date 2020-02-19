@@ -113,3 +113,12 @@ ul {
 .parent_card {
   position: relative;
 }
+.save_news_container {
+  height: 20px;
+}
+.save_news_button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  @include read_button_style();
+}

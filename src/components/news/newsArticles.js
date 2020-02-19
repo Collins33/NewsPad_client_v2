@@ -1,6 +1,5 @@
 import React from "react";
 import "./news.scss";
-import review from "../../images/review.png";
 
 export const NewsArticle = ({
   news,
@@ -30,11 +29,12 @@ export const NewsArticle = ({
           </div>
         </div>
       </a>
-      <div onClick={() => getSingleNewsArticle(story)}>
+      <div
+        className="save_news_container"
+        onClick={() => getSingleNewsArticle(story)}
+      >
         {email ? (
-          <div>
-            <img src={review} alt="like-icon" className="like_icon" />
-          </div>
+          <button className="save_news_button">Save the Article</button>
         ) : (
           ""
         )}
