@@ -54,12 +54,21 @@ class Header extends Component {
               <span className="navbar_item">NewsPad</span>
             </Link>
           </li>
-          <li>
-            <Link style={navStyle} to="/">
-              {" "}
-              <span className="navbar_item">About Us</span>
-            </Link>
-          </li>
+          {email ? (
+            <li>
+              <Link style={navStyle} to="/">
+                {" "}
+                <span className="navbar_item">My Articles</span>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link style={navStyle} to="/">
+                {" "}
+                <span className="navbar_item"></span>
+              </Link>
+            </li>
+          )}
           <li>
             <Search />
           </li>
