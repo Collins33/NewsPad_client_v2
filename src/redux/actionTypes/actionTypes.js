@@ -17,3 +17,8 @@ export const SIGN_UP_USER_FAIL = "SIGN_UP_USER_FAIL";
 export const LOGIN_USER = "LOGIN_USER";
 export const LOGIN_USER_SUCCESS = "LOGIN_USER_SUCCESS";
 export const LOGIN_USER_FAIL = "LOGIN_USER_FAIL";
+
+// SAVE NEWS
+export const SAVE_NEWS = "SAVE_NEWS";
+export const SAVE_NEWS_SUCCESS = "SAVE_NEWS_SUCCESS";
+export const SAVE_NEWS_FAIL = "SAVE_NEWS_FAIL";
