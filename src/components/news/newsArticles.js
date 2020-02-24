@@ -5,7 +5,9 @@ export const NewsArticle = ({
   news,
   checkNewsImage,
   email,
-  getSingleNewsArticle
+  getSingleNewsArticle,
+  saveNewsLoading,
+  saveNewsError
 }) => {
   const displayNews = news.map((story, index) => (
     <div className="news-card" key={index}>

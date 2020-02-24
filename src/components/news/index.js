@@ -82,10 +82,24 @@ class News extends Component {
     return imageUrl == null;
   };
 
-  getSingleNewsArticle = newsArticle => {
-    console.log(newsArticle);
+  getSingleNewsArticle = ({
+    author,
+    title,
+    description,
+    url,
+    urlToImage,
+    source
+  }) => {
+    const dataSave = {
+      author,
+      title,
+      description,
+      url,
+      urlToImage,
+      source: source.name
+    };
     const { saveNewsArticles } = this.props;
-    saveNewsArticles(newsArticle);
+    saveNewsArticles(dataSave);
   };
 
   /**
@@ -97,7 +111,7 @@ class News extends Component {
   };
 
   render() {
-    const { news, isLoading } = this.props;
+    const { news, isLoading, saveNewsLoading, saveNewsError } = this.props;
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
@@ -130,6 +144,8 @@ class News extends Component {
                         checkNewsImage={this.checkNewsImage}
                         email={email}
                         getSingleNewsArticle={this.getSingleNewsArticle}
+                        saveNewsLoading={saveNewsLoading}
+                        saveNewsError={saveNewsError}
                       />
                       <Paginator
                         currentNews={currentNews}

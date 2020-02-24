@@ -9,14 +9,13 @@ require("dotenv").config();
 
 function* saveNewsSaga(action) {
   try {
+    saveNewsApi.setToken();
     const saveNewsResults = yield call(
       saveNewsApi.saveNewsArticles,
       action.data
     );
-    console.log(saveNewsResults, "<><><><><><><><><><><><><><>");
     yield put(saveNewsArticlesSuccess());
   } catch (error) {
-    console.log("ERROR: ", error);
     yield put(saveNewsArticlesFail());
   }
 }
