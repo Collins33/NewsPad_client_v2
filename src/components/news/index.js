@@ -4,6 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { getNewsArticles } from "../../redux/actions/newsAction";
 import { searchNewsArticles } from "../../redux/actions/searchNewsActions";
+import { saveNewsArticles } from "../../redux/actions/saveNewsAction";
 import { NewsArticle } from "./newsArticles";
 import { SelectBar } from "../selectBar/index";
 import { NetworkError } from "../networkError/index";
@@ -83,6 +84,8 @@ class News extends Component {
 
   getSingleNewsArticle = newsArticle => {
     console.log(newsArticle);
+    const { saveNewsArticles } = this.props;
+    saveNewsArticles(newsArticle);
   };
 
   /**
@@ -151,14 +154,17 @@ class News extends Component {
   }
 }
 
-const mapStateToProps = ({ news }) => ({
+const mapStateToProps = ({ news, saveNews }) => ({
   news: news.news,
   isLoading: news.isLoading,
-  error: news.error
+  error: news.error,
+  saveNewsLoading: saveNews.isLoading,
+  saveNewsError: saveNews.error
 });
 const actionCreators = {
   getNewsArticles,
-  searchNewsArticles
+  searchNewsArticles,
+  saveNewsArticles
 };
 
 export default connect(
