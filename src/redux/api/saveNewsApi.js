@@ -11,7 +11,6 @@ class SaveNewsApi {
 
   static setToken() {
     const userToken = localStorage.getItem("token");
-    console.log(userToken, "TOKEN");
     axios.defaults.headers.common["Authorization"] = `Bearer ${userToken}`;
     axios.defaults.headers.post["Content-Type"] =
       "application/x-www-form-urlencoded";
