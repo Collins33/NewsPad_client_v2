@@ -7,16 +7,14 @@ export const saveNewsArticles = data => {
   };
 };
 
-export const saveNewsArticlesSuccess = response => {
+export const saveNewsArticlesSuccess = () => {
   return {
-    type: types.SEARCH_NEWS_ARTICLES_SUCCESS,
-    response
+    type: types.SEARCH_NEWS_ARTICLES_SUCCESS
   };
 };
 
-export const saveNewsArticlesFail = response => {
+export const saveNewsArticlesFail = () => {
   return {
-    type: types.SEARCH_NEWS_ARTICLES_FAIL,
-    response
+    type: types.SEARCH_NEWS_ARTICLES_FAIL
   };
 };
