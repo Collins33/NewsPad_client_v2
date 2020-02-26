@@ -5,6 +5,7 @@ import {
   saveNewsArticlesSuccess,
   saveNewsArticlesFail
 } from "../actions/saveNewsAction.js";
+import { toast } from "react-toastify";
 require("dotenv").config();
 
 function* saveNewsSaga(action) {
@@ -12,8 +13,14 @@ function* saveNewsSaga(action) {
     saveNewsApi.setToken();
     yield call(saveNewsApi.saveNewsArticles, action.data);
     yield put(saveNewsArticlesSuccess());
+    toast.success("News article saved !", {
+      position: toast.POSITION.TOP_CENTER
+    });
   } catch (error) {
     yield put(saveNewsArticlesFail());
+    toast.error("There was an error while saving !", {
+      position: toast.POSITION.TOP_CENTER
+    });
   }
 }
 

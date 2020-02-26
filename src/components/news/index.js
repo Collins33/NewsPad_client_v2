@@ -85,18 +85,6 @@ class News extends Component {
     return imageUrl == null;
   };
 
-  successNotify = () => {
-    toast.success("News article saved !", {
-      position: toast.POSITION.TOP_CENTER
-    });
-  };
-
-  errorNotify = () => {
-    toast.error("There was an error while saving !", {
-      position: toast.POSITION.TOP_CENTER
-    });
-  };
-
   getSingleNewsArticle = ({
     author,
     title,
