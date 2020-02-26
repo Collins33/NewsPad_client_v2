@@ -126,7 +126,7 @@ class News extends Component {
   };
 
   render() {
-    const { news, isLoading } = this.props;
+    const { news, isLoading, saveNewsError, saveNewsSuccess } = this.props;
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
@@ -138,6 +138,8 @@ class News extends Component {
     return (
       <div>
         <ToastContainer />
+        {saveNewsSuccess ? this.successNotify() : ""}
+        {saveNewsError ? this.errorNotify() : ""}
         {isLoading ? (
           <div className="loader">
             <Loader type="Puff" color="#00BFFF" height={height} width={width} />
@@ -160,8 +162,6 @@ class News extends Component {
                         checkNewsImage={this.checkNewsImage}
                         email={email}
                         getSingleNewsArticle={this.getSingleNewsArticle}
-                        successNotify={this.successNotify}
-                        errorNotify={this.errorNotify}
                       />
                       <Paginator
                         currentNews={currentNews}
@@ -191,7 +191,8 @@ const mapStateToProps = ({ news, saveNews }) => ({
   isLoading: news.isLoading,
   error: news.error,
   saveNewsLoading: saveNews.isLoading,
-  saveNewsError: saveNews.error
+  saveNewsError: saveNews.error,
+  saveNewsSuccess: saveNews.success
 });
 const actionCreators = {
   getNewsArticles,
