@@ -126,7 +126,7 @@ class News extends Component {
   };
 
   render() {
-    const { news, isLoading, saveNewsError, saveNewsSuccess } = this.props;
+    const { news, isLoading } = this.props;
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
@@ -138,8 +138,6 @@ class News extends Component {
     return (
       <div>
         <ToastContainer />
-        {saveNewsSuccess ? this.successNotify() : ""}
-        {saveNewsError ? this.errorNotify() : ""}
         {isLoading ? (
           <div className="loader">
             <Loader type="Puff" color="#00BFFF" height={height} width={width} />
