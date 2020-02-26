@@ -111,7 +111,7 @@ class News extends Component {
   };
 
   render() {
-    const { news, isLoading, saveNewsLoading, saveNewsError } = this.props;
+    const { news, isLoading } = this.props;
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
@@ -144,8 +144,6 @@ class News extends Component {
                         checkNewsImage={this.checkNewsImage}
                         email={email}
                         getSingleNewsArticle={this.getSingleNewsArticle}
-                        saveNewsLoading={saveNewsLoading}
-                        saveNewsError={saveNewsError}
                       />
                       <Paginator
                         currentNews={currentNews}
