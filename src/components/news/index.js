@@ -9,8 +9,11 @@ import { NewsArticle } from "./newsArticles";
 import { SelectBar } from "../selectBar/index";
 import { NetworkError } from "../networkError/index";
 import Paginator from "./paginator";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./news.scss";
 
+toast.configure();
 class News extends Component {
   state = {
     currentPage: 1,
@@ -82,6 +85,18 @@ class News extends Component {
     return imageUrl == null;
   };
 
+  successNotify = () => {
+    toast.success("News article saved !", {
+      position: toast.POSITION.TOP_CENTER
+    });
+  };
+
+  errorNotify = () => {
+    toast.error("There was an error while saving !", {
+      position: toast.POSITION.TOP_CENTER
+    });
+  };
+
   getSingleNewsArticle = ({
     author,
     title,
@@ -122,6 +137,7 @@ class News extends Component {
     const email = localStorage.getItem("email");
     return (
       <div>
+        <ToastContainer />
         {isLoading ? (
           <div className="loader">
             <Loader type="Puff" color="#00BFFF" height={height} width={width} />
@@ -144,6 +160,8 @@ class News extends Component {
                         checkNewsImage={this.checkNewsImage}
                         email={email}
                         getSingleNewsArticle={this.getSingleNewsArticle}
+                        successNotify={this.successNotify}
+                        errorNotify={this.errorNotify}
                       />
                       <Paginator
                         currentNews={currentNews}
