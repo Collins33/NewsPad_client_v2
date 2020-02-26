@@ -4,7 +4,7 @@ require("dotenv").config();
 class SaveNewsApi {
   static saveNewsArticles(newsData) {
     return axios.post(
-      "http://newspadv2server.herokuapp.com/api/v1/news",
+      "https://newspadv2server.herokuapp.com/api/v1/news",
       newsData
     );
   }
