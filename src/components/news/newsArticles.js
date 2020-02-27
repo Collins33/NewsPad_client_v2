@@ -5,7 +5,8 @@ export const NewsArticle = ({
   news,
   checkNewsImage,
   email,
-  getSingleNewsArticle
+  getSingleNewsArticle,
+  userLoginEmail
 }) => {
   const displayNews = news.map((story, index) => (
     <div className="news-card" key={index}>
@@ -33,7 +34,7 @@ export const NewsArticle = ({
         className="save_news_container"
         onClick={() => getSingleNewsArticle(story)}
       >
-        {email ? (
+        {userLoginEmail || email ? (
           <button className="save_news_button">Save the article</button>
         ) : (
           ""

@@ -114,7 +114,7 @@ class News extends Component {
   };
 
   render() {
-    const { news, isLoading } = this.props;
+    const { news, isLoading, userLoginEmail } = this.props;
     const { currentPage, newsPerPage, categories } = this.state;
     // logic for displaying news
     const indexOfTheLastNews = currentPage * newsPerPage;
@@ -148,6 +148,7 @@ class News extends Component {
                         checkNewsImage={this.checkNewsImage}
                         email={email}
                         getSingleNewsArticle={this.getSingleNewsArticle}
+                        userLoginEmail={userLoginEmail}
                       />
                       <Paginator
                         currentNews={currentNews}
@@ -172,13 +173,14 @@ class News extends Component {
   }
 }
 
-const mapStateToProps = ({ news, saveNews }) => ({
+const mapStateToProps = ({ news, saveNews, userLogin }) => ({
   news: news.news,
   isLoading: news.isLoading,
   error: news.error,
   saveNewsLoading: saveNews.isLoading,
   saveNewsError: saveNews.error,
-  saveNewsSuccess: saveNews.success
+  saveNewsSuccess: saveNews.success,
+  userLoginEmail: userLogin.email
 });
 const actionCreators = {
   getNewsArticles,
