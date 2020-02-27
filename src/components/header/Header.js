@@ -91,11 +91,9 @@ class Header extends Component {
             style={customStyles}
             contentLabel="Example Modal"
           >
-            <button onClick={this.closeModal} id="modal_close">
-              X
-            </button>
+            <div onClick={this.closeModal}>X</div>
             <div className="form_type_selector">
-              <button
+              {/* <button
                 className="modal_button"
                 onClick={this.changeMode}
                 value="signup"
@@ -108,7 +106,28 @@ class Header extends Component {
                 value="login"
               >
                 Log In
-              </button>
+              </button> */}
+              {signup === "signup" ? (
+                <div className="authentication_container">
+                  <div className="auth_text">SIGN UP</div>
+                  <div
+                    onClick={this.changeMode}
+                    className="auth_text_secondary"
+                  >
+                    Have an account? Log In
+                  </div>
+                </div>
+              ) : (
+                <div className="authentication_container">
+                  <div className="auth_text">LOG IN</div>
+                  <div
+                    onClick={this.changeMode}
+                    className="auth_text_secondary"
+                  >
+                    New user? Create Account
+                  </div>
+                </div>
+              )}
             </div>
             {signup === "signup" ? (
               <SignUp />
