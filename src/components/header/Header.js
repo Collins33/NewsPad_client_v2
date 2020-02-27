@@ -12,7 +12,7 @@ const customStyles = {
     left: "50%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
+    width: "50%",
     transform: "translate(-50%, -50%)"
   }
 };
@@ -93,20 +93,6 @@ class Header extends Component {
           >
             <div onClick={this.closeModal}>X</div>
             <div className="form_type_selector">
-              {/* <button
-                className="modal_button"
-                onClick={this.changeMode}
-                value="signup"
-              >
-                Sign Up
-              </button>
-              <button
-                className="modal_button"
-                onClick={this.changeMode}
-                value="login"
-              >
-                Log In
-              </button> */}
               {signup === "signup" ? (
                 <div className="authentication_container">
                   <div className="auth_text">SIGN UP</div>
