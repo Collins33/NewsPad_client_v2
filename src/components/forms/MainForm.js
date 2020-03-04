@@ -40,9 +40,6 @@ class MainForm extends Component {
           <button className="search__button" type="submit">
             {buttonText}
           </button>
-          <button onClick={this.showPassword} type="button">
-            Show
-          </button>
         </form>
       </div>
     );

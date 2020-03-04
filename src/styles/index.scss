@@ -18,6 +18,11 @@ $width: 100%;
   justify-content: center;
 }
 
+@mixin flex_direction_column {
+  display: $flex-property;
+  flex-direction: column;
+}
+
 @mixin button_style() {
   background-color: black;
   display: inline-block;
