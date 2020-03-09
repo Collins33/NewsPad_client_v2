@@ -25,7 +25,7 @@ export const NewsArticle = ({
       <div className="news_article_description_container">{story.title}</div>
       {userLoginEmail || email ? (
         <div className="tooltip">
-          ...
+          <h1>...</h1>
           <span
             className="tooltiptext"
             onClick={() => getSingleNewsArticle(story)}
