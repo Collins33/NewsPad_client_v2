@@ -6,11 +6,13 @@ import {
   saveNewsArticlesFail
 } from "../actions/saveNewsAction.js";
 import { toast } from "react-toastify";
+import addTokenHeader from "../api/tokenHeaderHelper";
+
 require("dotenv").config();
 
 function* saveNewsSaga(action) {
   try {
-    saveNewsApi.setToken();
+    addTokenHeader();
     yield call(saveNewsApi.saveNewsArticles, action.data);
     yield put(saveNewsArticlesSuccess());
     toast.success("News article saved !", {

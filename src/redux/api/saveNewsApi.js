@@ -8,13 +8,6 @@ class SaveNewsApi {
       newsData
     );
   }
-
-  static setToken() {
-    const userToken = localStorage.getItem("token");
-    axios.defaults.headers.common["Authorization"] = `Bearer ${userToken}`;
-    axios.defaults.headers.post["Content-Type"] =
-      "application/x-www-form-urlencoded";
-  }
 }
 
 export default SaveNewsApi;
