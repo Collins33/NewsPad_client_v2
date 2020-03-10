@@ -57,7 +57,7 @@ class Header extends Component {
             <li>
               <Link style={navStyle} to="/profile">
                 {" "}
-                <span className="navbar_item">My Profile</span>
+                <span className="navbar_item">Dashboard</span>
               </Link>
             </li>
           ) : (
