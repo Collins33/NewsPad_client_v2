@@ -24,6 +24,6 @@ export const SAVE_NEWS_SUCCESS = "SAVE_NEWS_SUCCESS";
 export const SAVE_NEWS_FAIL = "SAVE_NEWS_FAIL";
 
 // retrieve news
-export const GET_NEWS = "GET_NEWS";
-export const GET_NEWS_SUCCESS = "GET_NEWS_SUCCESS";
-export const GET_NEWS_FAIL = "GET_NEWS_FAIL";
+export const GET_SAVED_NEWS = "GET_SAVED_NEWS";
+export const GET_SAVED_NEWS_SUCCESS = "GET_SAVED_NEWS_SUCCESS";
+export const GET_SAVED_NEWS_FAIL = "GET_SAVED_NEWS_FAIL";
