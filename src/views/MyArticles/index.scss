@@ -1,0 +1,13 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+}
+
+.sidebar-container {
+  max-width: 30%;
+}
+
+.my-articles-container {
+  max-width: 70%;
+}

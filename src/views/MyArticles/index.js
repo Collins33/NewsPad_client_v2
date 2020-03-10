@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import "./index.scss";
 
 class MyArticles extends Component {
   render() {
     return (
-      <div>
-        <h1>My Articles</h1>
+      <div className="dashboard-container">
+        <div className="sidebar-container">Navigator</div>
+        <div className="my-articles-container">My Articles</div>
       </div>
     );
   }
