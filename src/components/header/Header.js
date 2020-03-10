@@ -55,7 +55,7 @@ class Header extends Component {
           </li>
           {email ? (
             <li>
-              <Link style={navStyle} to="/">
+              <Link style={navStyle} to="/profile">
                 {" "}
                 <span className="navbar_item">My Profile</span>
               </Link>
