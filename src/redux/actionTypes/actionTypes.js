@@ -22,3 +22,8 @@ export const LOGIN_USER_FAIL = "LOGIN_USER_FAIL";
 export const SAVE_NEWS = "SAVE_NEWS";
 export const SAVE_NEWS_SUCCESS = "SAVE_NEWS_SUCCESS";
 export const SAVE_NEWS_FAIL = "SAVE_NEWS_FAIL";
+
+// retrieve news
+export const GET_NEWS = "GET_NEWS";
+export const GET_NEWS_SUCCESS = "GET_NEWS_SUCCESS";
+export const GET_NEWS_FAIL = "GET_NEWS_FAIL";
