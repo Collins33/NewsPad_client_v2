@@ -1,3 +1,4 @@
+@import "../../styles/index";
 .dashboard-container {
   display: flex;
   flex-direction: row;
@@ -10,5 +11,27 @@
 }
 
 .my-articles-container {
-  max-width: 70%;
+  max-width: 100%;
+}
+
+.saved_news_grid_container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.saved_news_card {
+  @include flex_direction_column;
+  // width: 50%;
+  height: auto;
+  margin: 4%;
+  background-color: var(--app-bg-color);
+  /* box-shadow: 0 1px 0px 1px rgba(0,0,0,0.1); */
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: relative;
+  text-decoration: none;
+  color: black;
 }

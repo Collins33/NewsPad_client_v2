@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import "./index.scss";
 import { connect } from "react-redux";
 import { getSavedNewsArticle } from "../../redux/actions/getNewsAction";
-
+import { SavedNewsArticles } from "../../components/savedNews/index";
 class MyArticles extends Component {
   componentDidMount() {
     const { getSavedNewsArticle } = this.props;
     getSavedNewsArticle();
   }
   render() {
-    const { savedNews, isLoading } = this.props;
-    console.log(savedNews);
+    const { news, isLoading } = this.props;
+    console.log(news);
     return (
       <div className="dashboard-container">
         <div className="sidebar-container">Navigator</div>
@@ -18,7 +18,10 @@ class MyArticles extends Component {
           {isLoading ? (
             <h1>Fetching your saved articles</h1>
           ) : (
-            <h1>Myarticles</h1>
+            <>
+              <h1>Saved Articles</h1>
+              <SavedNewsArticles news={news} />
+            </>
           )}
         </div>
       </div>
@@ -27,7 +30,7 @@ class MyArticles extends Component {
 }
 
 const mapStateToProps = ({ getNews }) => ({
-  savedNews: getNews.savedNews,
+  news: getNews.savedNews,
   isLoading: getNews.isLoading,
   error: getNews.error
 });
