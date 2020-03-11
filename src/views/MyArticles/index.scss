@@ -2,7 +2,15 @@
 .dashboard-container {
   display: flex;
   flex-direction: row;
-  margin-top: 5%;
+  margin-top: 7%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7%;
+  }
 }
 
 .sidebar-container {
@@ -17,7 +25,7 @@
 .saved_news_grid_container {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 
 .saved_news_card {
@@ -34,4 +42,12 @@
   position: relative;
   text-decoration: none;
   color: black;
+}
+
+.news-image {
+  width: $width;
+  height: 350px;
+}
+.saved_news_title {
+  height: 150px;
 }

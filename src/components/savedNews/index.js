@@ -3,7 +3,9 @@ import React from "react";
 export const SavedNewsArticles = ({ news }) => {
   const displaySavedNews = news.map((article, index) => (
     <div className="saved_news_card">
-      <div>{article.title}</div>
+      <div className="saved_news_title">
+        <h2>{article.title}</h2>
+      </div>
       <div>
         <img src={article.urlToImage} className="news-image" alt="images" />
       </div>
