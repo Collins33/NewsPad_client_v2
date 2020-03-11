@@ -5,13 +5,15 @@ import {
   getSavedNewsArticleSuccess,
   getSavedNewsArticleFail
 } from "../actions/getNewsAction";
+import addTokenHeader from "../api/tokenHeaderHelper";
 require("dotenv").config();
 
 function* fetchSavedNewsSaga(action) {
   try {
-    const news = yield call(SavedNewsApi.getNewsArticles);
-    const data = news.data.articles;
-    yield put(getSavedNewsArticleSuccess(data));
+    addTokenHeader();
+    const response = yield call(SavedNewsApi.getNewsArticles);
+    const articles = response.data.news;
+    yield put(getSavedNewsArticleSuccess(articles));
   } catch (error) {
     yield put(getSavedNewsArticleFail());
   }
