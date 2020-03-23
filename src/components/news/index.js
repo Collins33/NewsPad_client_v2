@@ -12,6 +12,7 @@ import Paginator from "./paginator";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./news.scss";
+import checkNewsArticles from "../../utils/news";
 
 toast.configure();
 class News extends Component {
@@ -35,17 +36,6 @@ class News extends Component {
   componentDidMount() {
     const { getNewsArticles } = this.props;
     getNewsArticles();
-  }
-
-  /**
-   * Check if news
-   * articles exist
-   * return true
-   * if array has data
-   */
-  checkNewsArticles(news) {
-    const newsLength = news.length;
-    return newsLength >= 1; // either evaluate to true or false
   }
 
   /**
@@ -141,7 +131,7 @@ class News extends Component {
                   categories={categories}
                 />
                 <div>
-                  {this.checkNewsArticles(news) ? (
+                  {checkNewsArticles(news) ? (
                     <>
                       <NewsArticle
                         news={currentNews}

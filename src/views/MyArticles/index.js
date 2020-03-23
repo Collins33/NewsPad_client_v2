@@ -14,7 +14,6 @@ class MyArticles extends Component {
 
   render() {
     const { news, isLoading } = this.props;
-    console.log(news);
     return (
       <>
         <Header />
