@@ -40,6 +40,7 @@ class Header extends Component {
   };
   render() {
     const { signup } = this.state;
+    const { search } = this.props;
     const email = localStorage.getItem("email");
     const navStyle = {
       color: "black"
@@ -68,9 +69,13 @@ class Header extends Component {
               </Link>
             </li>
           )}
-          <li>
-            <Search />
-          </li>
+          {search ? (
+            <li>
+              <Search />
+            </li>
+          ) : (
+            ""
+          )}
           <li className="navbar_item">
             {email ? (
               <div>Welcome {email}</div>
