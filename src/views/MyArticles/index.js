@@ -5,7 +5,7 @@ import { getSavedNewsArticle } from "../../redux/actions/getNewsAction";
 import { SavedNewsArticles } from "../../components/savedNews/index";
 import Header from "../../components/header/Header";
 import checkNewsArticles from "../../utils/news";
-
+import { SideBar } from "../../components/savedNews/sideBar";
 class MyArticles extends Component {
   componentDidMount() {
     const { getSavedNewsArticle } = this.props;
@@ -18,7 +18,9 @@ class MyArticles extends Component {
       <>
         <Header />
         <div className="dashboard-container">
-          <div className="sidebar-container">Navigator</div>
+          <div className="sidebar-container">
+            <SideBar />
+          </div>
           <div className="my-articles-container">
             {isLoading ? (
               <h1>Fetching your saved articles</h1>
