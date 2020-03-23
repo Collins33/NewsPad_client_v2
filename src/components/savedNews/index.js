@@ -2,7 +2,7 @@ import React from "react";
 
 export const SavedNewsArticles = ({ news }) => {
   const displaySavedNews = news.map((article, index) => (
-    <div className="saved_news_card">
+    <div className="saved_news_card" key={index}>
       <div className="saved_news_title">
         <h2>{article.title}</h2>
       </div>
