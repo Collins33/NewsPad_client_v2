@@ -22,7 +22,9 @@ export const NewsArticle = ({
         )}
       </div>
       <div className="news_source_container">{story.source.name}</div>
-      <div className="news_article_description_container">{story.title}</div>
+      <div className="news_article_description_container">
+        <a href={story.url}>{story.title}</a>
+      </div>
       {userLoginEmail || email ? (
         <div className="tooltip">
           <h2>...</h2>

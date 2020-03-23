@@ -19,18 +19,26 @@ button {
   min-width: 48px;
 }
 
+/* unvisited link */
 a:link {
+  color: black;
   text-decoration: none;
 }
 
+/* visited link */
 a:visited {
+  color: blue;
   text-decoration: none;
 }
 
+/* mouse over link */
 a:hover {
+  color: black;
   text-decoration: underline;
 }
 
+/* selected link */
 a:active {
+  color: blue;
   text-decoration: underline;
 }
