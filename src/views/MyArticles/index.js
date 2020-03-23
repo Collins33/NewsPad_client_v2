@@ -3,6 +3,7 @@ import "./index.scss";
 import { connect } from "react-redux";
 import { getSavedNewsArticle } from "../../redux/actions/getNewsAction";
 import { SavedNewsArticles } from "../../components/savedNews/index";
+import Header from "../../components/header/Header";
 class MyArticles extends Component {
   componentDidMount() {
     const { getSavedNewsArticle } = this.props;
@@ -12,19 +13,22 @@ class MyArticles extends Component {
     const { news, isLoading } = this.props;
     console.log(news);
     return (
-      <div className="dashboard-container">
-        <div className="sidebar-container">Navigator</div>
-        <div className="my-articles-container">
-          {isLoading ? (
-            <h1>Fetching your saved articles</h1>
-          ) : (
-            <>
-              <h1>Saved Articles</h1>
-              <SavedNewsArticles news={news} />
-            </>
-          )}
+      <>
+        <Header />
+        <div className="dashboard-container">
+          <div className="sidebar-container">Navigator</div>
+          <div className="my-articles-container">
+            {isLoading ? (
+              <h1>Fetching your saved articles</h1>
+            ) : (
+              <>
+                <h1>Saved Articles</h1>
+                <SavedNewsArticles news={news} />
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
