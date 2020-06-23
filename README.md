@@ -1,6 +1,6 @@
 # NewsPad version 2
 
-- Second version of the NEWS Api client powered by the NEWS API
+- Second version of the NEWS Api client powered by the Google API
 - It displays NEWS stories from different sources and allows logged in users to save NEWS articles
 
 # Setting it up locally
