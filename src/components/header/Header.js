@@ -34,6 +34,8 @@ class Header extends Component {
   };
 
   // deals with the auth button
+  // extract user information from auth object
+  
   responseGoogle = (response)=>
   {
     console.log(response)
@@ -53,7 +55,6 @@ class Header extends Component {
     });
   };
   render() {
-    console.log(GOOGLE_CLIENT_ID)
     const { signup, isAuthenticated } = this.state;
     const { search } = this.props;
     const email = localStorage.getItem("email");
