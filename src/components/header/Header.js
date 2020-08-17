@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import SignUp from "../forms/SignForm";
 import Login from "../forms/LoginForm";
 import Modal from "react-modal";
+import { GoogleLogin } from 'react-google-login';
+
 
 const customStyles = {
   content: {
@@ -24,6 +26,12 @@ class Header extends Component {
     modalIsOpen: false,
     signup: "signup"
   };
+
+  // deals with the auth button
+  responseGoogle = (response)=>
+  {
+    console.log(response)
+  }
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
@@ -80,12 +88,19 @@ class Header extends Component {
             {email ? (
               <div>Welcome {email}</div>
             ) : (
-              <button
-                className="form_type_selector_button"
-                onClick={this.openModal}
-              >
-                Login/Signup
-              </button>
+              // <button
+              //   className="form_type_selector_button"
+              //   onClick={this.openModal}
+              // >
+              //   Login/Signup
+              // </button>
+            <GoogleLogin 
+              clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+              buttonText="Login"
+              onSuccess={this.responseGoogle}
+              onFailure={this.responseGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
             )}
           </li>
           <Modal
