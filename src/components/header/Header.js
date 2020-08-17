@@ -6,7 +6,10 @@ import SignUp from "../forms/SignForm";
 import Login from "../forms/LoginForm";
 import Modal from "react-modal";
 import { GoogleLogin } from 'react-google-login';
+require("dotenv").config();
 
+
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 
 const customStyles = {
   content: {
@@ -50,6 +53,7 @@ class Header extends Component {
     });
   };
   render() {
+    console.log(GOOGLE_CLIENT_ID)
     const { signup, isAuthenticated } = this.state;
     const { search } = this.props;
     const email = localStorage.getItem("email");
@@ -98,7 +102,7 @@ class Header extends Component {
               //   Login/Signup
               // </button>
             <GoogleLogin 
-              clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+              clientId= {GOOGLE_CLIENT_ID}
               buttonText="Login"
               onSuccess={this.responseGoogle}
               onFailure={this.responseGoogle}
