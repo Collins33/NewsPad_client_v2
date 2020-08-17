@@ -14,3 +14,5 @@
 - Redux Saga
 
 - [The server side](https://github.com/Collins33/NewsPad_v2_server)
+
+- Currently down. Switching from NewsApi to GoogleApi
