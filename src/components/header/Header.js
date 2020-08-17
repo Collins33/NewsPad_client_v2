@@ -24,7 +24,10 @@ class Header extends Component {
     clicked: false,
     visible: false,
     modalIsOpen: false,
-    signup: "signup"
+    signup: "signup",
+    isAuthenticated: false,
+    user: null,
+    token: ''
   };
 
   // deals with the auth button
@@ -47,7 +50,7 @@ class Header extends Component {
     });
   };
   render() {
-    const { signup } = this.state;
+    const { signup, isAuthenticated } = this.state;
     const { search } = this.props;
     const email = localStorage.getItem("email");
     const navStyle = {
@@ -85,7 +88,7 @@ class Header extends Component {
             ""
           )}
           <li className="navbar_item">
-            {email ? (
+            {isAuthenticated ? (
               <div>Welcome {email}</div>
             ) : (
               // <button
