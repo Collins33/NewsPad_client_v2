@@ -8,7 +8,6 @@ import Modal from "react-modal";
 import { GoogleLogin } from 'react-google-login';
 require("dotenv").config();
 
-
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 
 const customStyles = {
@@ -35,10 +34,26 @@ class Header extends Component {
 
   // deals with the auth button
   // extract user information from auth object
-  
+
   responseGoogle = (response)=>
   {
-    console.log(response)
+    const googleAuth = JSON.stringify(response.accessToken)
+    const options = {
+      method: 'POST',
+      body: googleAuth,
+      mode: 'cors',
+      cache: 'default'
+    }
+    fetch('http://localhost:4000/api/v1/auth/facebook', options)
+    .then(response => {
+      const userToken = response.headers.get('x-auth-token')
+      // get user from the reponse
+      response.json().then(user=>{
+        if(userToken){
+          this.setState({isAuthenticated: true, user, token: userToken})
+        }
+      })
+    })
   }
 
   openModal = () => {
