@@ -35,25 +35,28 @@ class Header extends Component {
   // deals with the auth button
   // extract user information from auth object
 
-  responseGoogle = (response)=>
+  responseGoogle = async (response)=>
   {
+    try{
     const googleAuth = JSON.stringify(response.accessToken)
     const options = {
       method: 'POST',
-      body: googleAuth,
-      mode: 'cors',
-      cache: 'default'
+      body: JSON.stringify({googleAuth}),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
     }
-    fetch('http://localhost:4000/api/v1/auth/facebook', options)
-    .then(response => {
-      const userToken = response.headers.get('x-auth-token')
-      // get user from the reponse
-      response.json().then(user=>{
-        if(userToken){
-          this.setState({isAuthenticated: true, user, token: userToken})
-        }
-      })
-    })
+    const rawResponse = await fetch('http://localhost:4000/api/v1/users/auth/google', options);
+    const content = await rawResponse.json();
+    const userToken = rawResponse.headers.get('x-auth-token');
+    if(userToken)
+    {
+      this.setState({isAuthenticated: true, user: content, token: userToken})
+    }
+  }catch(error){
+    console.log("ERROR")
+  }
   }
 
   openModal = () => {
