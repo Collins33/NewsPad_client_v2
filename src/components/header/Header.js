@@ -38,10 +38,10 @@ class Header extends Component {
   responseGoogle = async (response)=>
   {
     try{
-    const googleAuth = JSON.stringify(response.accessToken)
+    const access_token = JSON.stringify(response.accessToken)
     const options = {
       method: 'POST',
-      body: JSON.stringify({googleAuth}),
+      body: JSON.stringify({access_token}),
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -49,13 +49,16 @@ class Header extends Component {
     }
     const rawResponse = await fetch('http://localhost:4000/api/v1/users/auth/google', options);
     const content = await rawResponse.json();
-    const userToken = rawResponse.headers.get('x-auth-token');
-    if(userToken)
+    console.log(content, "USER RESPONSE")
+    const {token, email} = content
+    if(token)
     {
-      this.setState({isAuthenticated: true, user: content, token: userToken})
+      this.setState({isAuthenticated: true, user: email, token: token})
+      localStorage.setItem("email", email)
+      localStorage.setItem("token", token)
     }
   }catch(error){
-    console.log("ERROR")
+    console.log("ERROR", error)
   }
   }
 
@@ -73,7 +76,7 @@ class Header extends Component {
     });
   };
   render() {
-    const { signup, isAuthenticated } = this.state;
+    const { signup, isAuthenticated, user } = this.state;
     const { search } = this.props;
     const email = localStorage.getItem("email");
     const navStyle = {
@@ -112,14 +115,15 @@ class Header extends Component {
           )}
           <li className="navbar_item">
             {isAuthenticated ? (
-              <div>Welcome {email}</div>
+              <div>Welcome {user}</div>
             ) : (
-              // <button
-              //   className="form_type_selector_button"
-              //   onClick={this.openModal}
-              // >
-              //   Login/Signup
-              // </button>
+              <>
+              <button
+                className="form_type_selector_button"
+                onClick={this.openModal}
+              >
+                Login/Signup
+              </button>
             <GoogleLogin 
               clientId= {GOOGLE_CLIENT_ID}
               buttonText="Login"
@@ -127,6 +131,7 @@ class Header extends Component {
               onFailure={this.responseGoogle}
               cookiePolicy={'single_host_origin'}
             />
+            </>
             )}
           </li>
           <Modal
