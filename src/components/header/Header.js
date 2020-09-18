@@ -26,6 +26,13 @@ class Header extends Component {
   responseGoogle = async (response)=>
   {
     try{
+    const ENV = process.env.REACT_APP_ENVIRONMENT;
+    let url;
+    if(ENV === 'Local'){
+      url = 'http://localhost:4000/api/v1/users/auth/google'
+    }else{
+      url = "https://newspadv2server.herokuapp.com/api/v1/users/auth/google"
+    }
     const access_token = JSON.stringify(response.accessToken)
     const options = {
       method: 'POST',
@@ -35,7 +42,7 @@ class Header extends Component {
         'Content-Type': 'application/json'
       }
     }
-    const rawResponse = await fetch('http://localhost:4000/api/v1/users/auth/google', options);
+    const rawResponse = await fetch(url, options);
     const content = await rawResponse.json();
     const {token, email} = content
     if(token)
