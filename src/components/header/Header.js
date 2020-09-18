@@ -6,7 +6,6 @@ import { GoogleLogin } from 'react-google-login';
 require("dotenv").config();
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-console.log(GOOGLE_CLIENT_ID, "GOOGLE CLIENT ID")
 class Header extends Component {
   state = {
     clicked: false,
@@ -34,8 +33,6 @@ class Header extends Component {
       url = "https://newspadv2server.herokuapp.com/api/v1/users/auth/google"
     }
     const access_token = JSON.stringify(response.accessToken)
-    console.log(access_token, "MY ACCESS TOKEN")
-    console.log(JSON.stringify({access_token}), "MY STRINGIFY ACCESS TOKEN")
     const options = {
       method: 'POST',
       body: JSON.stringify({access_token}),
