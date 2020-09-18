@@ -12,7 +12,8 @@ class Header extends Component {
     visible: false,
     modalIsOpen: false,
     signup: "signup",
-    user: ''
+    user: '',
+    loading: false
   };
 
   // deals with the auth button
@@ -25,6 +26,7 @@ class Header extends Component {
   responseGoogle = async (response)=>
   {
     try{
+    this.setState({loading: true})
     const ENV = process.env.REACT_APP_ENVIRONMENT;
     let url;
     if(ENV === 'Local'){
@@ -48,14 +50,15 @@ class Header extends Component {
     {
       localStorage.setItem("email", email)
       localStorage.setItem("token", token)
-      this.setState({user: email, token: token})
+      this.setState({user: email, token: token, loading:false})
     }
   }catch(error){
     console.log("ERROR", error)
   }
   }
   render() {
-    const { search, user } = this.props;
+    const { search} = this.props;
+    const {user, loading} = this.state;
     const email = localStorage.getItem("email");
     const navStyle = {
       color: "black"
@@ -96,13 +99,15 @@ class Header extends Component {
               <div>Welcome {email ? email: user}</div>
             ) : (
               <>
+            {loading ? 
+            <div>Loading....Please be patient</div>: 
             <GoogleLogin 
               clientId= {GOOGLE_CLIENT_ID}
               buttonText="Login"
               onSuccess={this.responseGoogle}
               onFailure={this.responseGoogle}
               cookiePolicy={'single_host_origin'}
-            />
+            />}
             </>
             )}
           </li>
