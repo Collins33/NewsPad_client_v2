@@ -114,8 +114,8 @@ class Header extends Component {
             ""
           )}
           <li className="navbar_item">
-            {isAuthenticated ? (
-              <div>Welcome {user}</div>
+            {email ? (
+              <div>Welcome {email}</div>
             ) : (
               <>
               <button

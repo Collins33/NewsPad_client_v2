@@ -19,6 +19,7 @@ function* saveNewsSaga(action) {
       position: toast.POSITION.TOP_CENTER
     });
   } catch (error) {
+    console.log(error, "ERROR")
     yield put(saveNewsArticlesFail());
     toast.error("There was an error while saving !", {
       position: toast.POSITION.TOP_CENTER
